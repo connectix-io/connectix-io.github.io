@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Connectix</title>
+  <meta name="description" content="Connectix is developed in Israel by people who build and run VoIP platforms for telecom companies. What we believe a telecom bot must do, and what we do not claim.">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span><span class="sr-only">Menu</span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav-cta" href="https://github.com/connectix-io/releases">Download</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero hero-small center">
+    <div class="container">
+      <span class="eyebrow">About</span>
+      <h1>Who makes Connectix</h1>
+      <p class="lead">Connectix is developed in Israel by people who build and run VoIP platforms for telecom companies.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Where it comes from</h2>
+      <p>Our work before Connectix was the platforms telecom companies run: switches, SIP trunks, WebRTC softphones, call centers, billing. The telecom companies on the front page are ones we worked with on that. Connectix comes out of the same work: the question of what an agent could do on such a network if it had the switch's events and the call's audio, and a person to hand off to.</p>
+
+      <h2>What we hold to</h2>
+      <dl>
+        <dt>It works alongside the team.</dt>
+        <dd>Connectix takes the first pass on a call or a fault and hands the rest to a person, with a summary. It is not sold as a replacement for anyone.</dd>
+        <dt>It asks before it acts.</dt>
+        <dd>A lookup is free. A change on the switch, a transfer, a hang-up, waits for an approval, and the switch itself whitelists what the bot may ask for.</dd>
+        <dt>It runs on your servers.</dt>
+        <dd>One container next to your switch, or a desktop app on a PC. Events, call records and recordings stay on your hardware. The speech and language models are the providers you configure.</dd>
+        <dt>It writes things down.</dt>
+        <dd>The bot's instructions are files you can read and edit. Its actions, approvals and summaries are kept. A log line names the fact and the fix, never a credential.</dd>
+        <dt>It keeps running.</dt>
+        <dd>Elixir and OTP: supervised processes, bounded buffers, watched connections. A failure restarts one part, not the program.</dd>
+      </dl>
+
+      <h2>What we do not claim</h2>
+      <p>Connectix has no reference customers yet, so this site has no testimonials, no customer counts and no prices. The logos on the front page are telecom companies we have worked with on earlier platform work, not Connectix installations. The first pilot will be measured against the numbers that company already keeps, and we will write about it when there is something to write.</p>
+
+      <h2>The code</h2>
+      <p>Connectix is one Elixir application, built and tested in Docker, with an end-to-end test that drives the softphone against a test PBX. The Windows installer is built on GitHub from a tagged commit and published on <a href="https://github.com/connectix-io/releases">GitHub Releases</a> with a checksum file.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Talk to us</h2>
+      <p>If you run a VoIP network and one of the three jobs sounds like something you would measure, write to us.</p>
+      <div class="actions center">
+        <a class="btn btn-primary" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container top">
+    <div>
+      <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
+      <p class="blurb">A telecom bot for VoIP providers, ITSPs and carriers. It runs on your servers, next to your switch, and works alongside your team.</p>
+    </div>
+    <div>
+      <h3>Product</h3>
+      <ul>
+        <li><a href="product.html">What it does</a></li>
+        <li><a href="https://github.com/connectix-io/releases">Download for Windows</a></li>
+        <li><a href="https://github.com/connectix-io/releases">Releases</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="container">&copy; 2026 Connectix. Developed in Israel.</div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

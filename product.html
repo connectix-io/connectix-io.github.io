@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connectix product: the softphone, the bot on calls, events, chat and reports</title>
+  <meta name="description" content="What is in Connectix: a Windows softphone, a bot that takes calls through FreeSWITCH's mod_earshot, an event pipeline with screen pops, a chat with the bot, and reports over the calls. One Elixir application.">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span><span class="sr-only">Menu</span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html" aria-current="page">Product</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav-cta" href="https://github.com/connectix-io/releases">Download</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero hero-small center">
+    <div class="container">
+      <span class="eyebrow">Product</span>
+      <h1>What is in Connectix</h1>
+      <p class="lead">The bot is the product. The softphone, the voice path, the event pipeline, the chat and the reports are how it hears, speaks, looks things up and shows its work. All of it is one Elixir application, shipped as one binary.</p>
+    </div>
+  </section>
+
+  <section class="feature" id="softphone">
+    <div class="container">
+      <div class="inner">
+        <div>
+          <div class="label">The softphone</div>
+          <h2>A phone on the agent's Windows PC</h2>
+          <p class="summary">A small window with a phone page. Connectix runs beside it and bridges the page's audio to your PBX over SIP. One install is one agent.</p>
+        </div>
+        <ul class="facts">
+          <li><strong>Registers to your PBX</strong> with a SIP account saved on the PC. The phone shows Ready only after the PBX has accepted it; a refusal is retried with backoff.</li>
+          <li><strong>Calls in and out,</strong> hold and resume, a second line with swap, call waiting, mute, DTMF, blind transfer. A third caller hears busy.</li>
+          <li><strong>No transcoding.</strong> Both legs are G.711 A-law; the audio is relayed between WebRTC and RTP inside the application.</li>
+          <li><strong>A Calls tab</strong> with the last hundred calls on that PC, and a log view with the last SIP trace and system lines, so a failed registration can be read on the spot.</li>
+          <li><strong>Settings in one file,</strong> <code>connectix.toml</code>, beside the program or in the data folder. Several SIP accounts; one active.</li>
+          <li><strong>Installer on GitHub Releases,</strong> built from a tagged commit, with a checksum file. The installer is not yet code-signed, so Windows shows an unknown-publisher warning.</li>
+        </ul>
+        <div class="wire"><span class="k">phone page</span> ── WebRTC audio ──&gt; <span class="k">Connectix</span> ── SIP + RTP (UDP) ──&gt; <span class="k">PBX</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature section-soft" id="voice">
+    <div class="container">
+      <div class="inner">
+        <div>
+          <div class="label">The bot on calls</div>
+          <h2>A call answered by the bot, through mod_earshot</h2>
+          <p class="summary">FreeSWITCH's mod_earshot streams an answered call's audio to Connectix over a WebSocket and plays back what comes in. The switch owns the audio; Connectix owns the conversation.</p>
+        </div>
+        <ul class="facts">
+          <li><strong>16 kHz PCM both ways.</strong> The switch does codecs, resampling, voice activity detection, barge-in, DTMF and PCI masking. Connectix hears, thinks and speaks.</li>
+          <li><strong>The caller can interrupt.</strong> When the caller starts speaking, queued playback is dropped.</li>
+          <li><strong>The bot can dial out too.</strong> An API call has the SIP bridge place a call with the bot on the line instead of a browser.</li>
+          <li><strong>Call control is fenced twice.</strong> mod_earshot whitelists the actions it allows (transfer, hang up, play); Connectix asks a person for approval before sending one.</li>
+          <li><strong>The speech and language models are yours to choose.</strong> They are configured by key; the application ships with an embedded model gateway and can also point at an external one.</li>
+          <li><strong>Authentication is a token</strong> set as a channel variable on the switch. Without it, Connectix refuses the handshake.</li>
+        </ul>
+        <div class="wire"><span class="k">FreeSWITCH</span> ── mod_earshot ── wss /ws/earshot ──&gt; <span class="k">Connectix</span> (one process per call)
+                                                            │
+                                                            ▼
+                                         speech to text → the bot → text to speech → the caller</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="events">
+    <div class="container">
+      <div class="inner">
+        <div>
+          <div class="label">Events and screen pops</div>
+          <h2>The switch's events, in one pipeline</h2>
+          <p class="summary">Everything FreeSWITCH reports goes through one pipeline: it buffers, applies back-pressure, routes to the bot and the agents, and stores the event.</p>
+        </div>
+        <ul class="facts">
+          <li><strong>Two ways in.</strong> Connectix reads the Event Socket directly, or a small agent beside each switch reads it there and sends the frames out over one WebSocket. Both produce the same frames.</li>
+          <li><strong>A YAML rule file</strong> decides which event pops which URL for which agent. Pops reach the phone app and the Chrome extension.</li>
+          <li><strong>Every event is kept</strong> in a DuckDB file with retention, so the bot and the reports can answer questions about yesterday as well as now.</li>
+          <li><strong>A silent switch raises an alarm.</strong> A deadman timer notices when a connected switch stops sending; the connection reconnects with backoff.</li>
+          <li><strong>Bounded buffers.</strong> Overflow drops the oldest event, counts the drop, and logs once per episode rather than once per message.</li>
+        </ul>
+        <div class="wire"><span class="k">FreeSWITCH</span> ── Event Socket ──&gt; Connectix
+<span class="k">FreeSWITCH</span> ── Event Socket ──&gt; node agent ── one WebSocket ──&gt; Connectix
+                                   │
+                                   ├──&gt; screen pops (phone app, Chrome extension)
+                                   └──&gt; event store (DuckDB, with retention)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature section-soft" id="chat">
+    <div class="container">
+      <div class="inner">
+        <div>
+          <div class="label">The chat</div>
+          <h2>Talk to the bot, approve what it wants to do</h2>
+          <p class="summary">The phone app has a CHAT tab. It is where a person asks the bot a question, watches it work, approves or refuses an action, and takes over a conversation.</p>
+        </div>
+        <ul class="facts">
+          <li><strong>Streamed replies</strong> with a Stop button. Conversations, tasks and files in a side rail.</li>
+          <li><strong>Approvals in the chat.</strong> When the bot wants to run a tool that changes something, the request appears as a card and waits for a yes.</li>
+          <li><strong>The bot asks back.</strong> When it is missing a fact, it asks the person a question instead of guessing.</li>
+          <li><strong>Take over.</strong> A person can take a conversation from the bot at any point.</li>
+          <li><strong>The bot's files are readable.</strong> Its instructions and skills can be viewed and edited from the chat, so what it does is written down, not hidden.</li>
+          <li><strong>The same bot in a terminal</strong> for an operator, and over an HTTP API with an OpenAPI description. Bots are versioned: draft, publish, retire.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="reports">
+    <div class="container">
+      <div class="inner">
+        <div>
+          <div class="label">Reports</div>
+          <h2>Questions about calls, answered from the store</h2>
+          <p class="summary">The default bot answers questions about calls, from the softphone's and the switch's records, with fixed queries and a chart when a chart helps.</p>
+        </div>
+        <ul class="facts">
+          <li><strong>Fixed SQL with bound parameters.</strong> The report queries are written by us and parameterised; the model fills in the parameters, not the query.</li>
+          <li><strong>Free SQL is off by default.</strong> It can be turned on per install when an operator wants it.</li>
+          <li><strong>Charts are drawn in the chat</strong> as inline SVG from a structured message, so they can be read on the agent's screen without another tool.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature section-soft" id="hood">
+    <div class="container">
+      <div class="inner">
+        <div>
+          <div class="label">Under the hood</div>
+          <h2>One Elixir application</h2>
+          <p class="summary">Phoenix serves a JSON API and WebSocket channels; the phone page is served from the same origin. The storage is the BEAM's own plus DuckDB. No second runtime.</p>
+        </div>
+        <ul class="facts">
+          <li><strong>Supervised processes.</strong> Every connection, buffer and cache is a named child of the supervision tree. Recovery is a restart, not an exception handler.</li>
+          <li><strong>Configuration is read at call time,</strong> from environment variables on a server or from <code>connectix.toml</code> on a PC. The file is validated before anything is applied; errors never echo values.</li>
+          <li><strong>Secrets are named, not written.</strong> A YAML file says <code>${VAR}</code>; the value lives in the environment. Secrets are compared in constant time.</li>
+          <li><strong>Health and metrics.</strong> <code>/health</code> reports per dependency, <code>/health/ready</code> is for a load balancer and is flipped off first on shutdown, <code>/metrics</code> is behind authentication.</li>
+          <li><strong>Logs name the fact and the fix,</strong> never a credential, a query string or a body.</li>
+          <li><strong>Storage:</strong> Mnesia for accounts, bots and conversations; DuckDB files for events and the model gateway. Both on your hardware.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="note">
+        <p><strong>Where it stands.</strong> The softphone, the event pipeline, the voice path, the chat and the reports are built and tested against a test PBX. The bot's first job on a real telecom network is what we are looking for a pilot for. We do not publish customer numbers because we do not have any yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>See it on your switch</h2>
+      <p>Tell us which switch you run and which of the three jobs you have in mind. We will answer with what it takes to run a pilot.</p>
+      <div class="actions center">
+        <a class="btn btn-primary" href="contact.html">Talk to us</a>
+        <a class="btn btn-outline" href="https://github.com/connectix-io/releases">Download for Windows</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container top">
+    <div>
+      <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
+      <p class="blurb">A telecom bot for VoIP providers, ITSPs and carriers. It runs on your servers, next to your switch, and works alongside your team.</p>
+    </div>
+    <div>
+      <h3>Product</h3>
+      <ul>
+        <li><a href="product.html">What it does</a></li>
+        <li><a href="https://github.com/connectix-io/releases">Download for Windows</a></li>
+        <li><a href="https://github.com/connectix-io/releases">Releases</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="container">&copy; 2026 Connectix. Developed in Israel.</div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

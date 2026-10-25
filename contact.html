@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Connectix</title>
+  <meta name="description" content="Write to Connectix about a pilot on your VoIP network, or download the Windows desktop app from GitHub Releases.">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span><span class="sr-only">Menu</span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a class="nav-cta" href="https://github.com/connectix-io/releases">Download</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero hero-small center">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1>Write to us</h1>
+      <p class="lead">One address, read by the people who build Connectix. No form, no ticket system.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="label">Email</div>
+          <h3><a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></h3>
+          <p>If you are a VoIP provider, ITSP or carrier thinking about a pilot, it helps to tell us:</p>
+          <ul>
+            <li>which switch you run, and whether it is FreeSWITCH;</li>
+            <li>which of the three jobs you have in mind: tier-1 support, NOC watch or provisioning;</li>
+            <li>roughly how many calls a day that line takes, and in which languages;</li>
+            <li>where Connectix would run: on your servers, or on an operator's PC.</li>
+          </ul>
+          <p>We answer in plain words, with what a pilot would take.</p>
+        </div>
+        <div class="card">
+          <div class="label">Downloads</div>
+          <h3>The Windows desktop app</h3>
+          <p>Each version is published on <a href="https://github.com/connectix-io/releases">GitHub Releases</a>: the installer, <code>Connectix_&lt;version&gt;_x64-setup.exe</code>, with a <code>SHA256SUMS.txt</code> to check it against.</p>
+          <p>Install it, open Connectix, sign in and add your SIP account in the gear. The phone shows Ready once your PBX has accepted the account.</p>
+          <p>The installer is not yet code-signed; Windows shows an unknown-publisher warning on first run.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://github.com/connectix-io/releases">Download for Windows</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container prose center">
+      <h2>Where we are</h2>
+      <p>Connectix is developed in Israel. We work with telecom companies in Israel and abroad, by email and by call.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container top">
+    <div>
+      <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
+      <p class="blurb">A telecom bot for VoIP providers, ITSPs and carriers. It runs on your servers, next to your switch, and works alongside your team.</p>
+    </div>
+    <div>
+      <h3>Product</h3>
+      <ul>
+        <li><a href="product.html">What it does</a></li>
+        <li><a href="https://github.com/connectix-io/releases">Download for Windows</a></li>
+        <li><a href="https://github.com/connectix-io/releases">Releases</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="container">&copy; 2026 Connectix. Developed in Israel.</div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

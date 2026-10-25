@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connectix: a telecom bot that works alongside your team</title>
+  <meta name="description" content="Connectix is an AI agent for VoIP providers, ITSPs and carriers. It runs on your servers next to FreeSWITCH, reads the switch's events and a call's audio, answers on its own SIP line, hands calls to a person with a summary, and acts only behind approvals.">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span><span class="sr-only">Menu</span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav-cta" href="https://github.com/connectix-io/releases">Download</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero center">
+    <div class="container">
+      <span class="eyebrow">A telecom bot</span>
+      <h1>An agent that works on your network, alongside your team.</h1>
+      <p class="lead">Connectix is an AI agent for VoIP providers, ITSPs and carriers. It runs next to your switch, reads its events and the audio of a call, and answers on a SIP line of its own. When a person should take over, it hands the call to them with a written summary. It changes nothing on the switch without an approval.</p>
+      <div class="actions center">
+        <a class="btn btn-primary" href="contact.html">Talk to us</a>
+        <a class="btn btn-ghost" href="https://github.com/connectix-io/releases">Download for Windows</a>
+      </div>
+      <span class="btn-note">The desktop app, Windows x64, from GitHub Releases.</span>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="container">
+      <div class="lbl">Telecom companies we have worked with</div>
+      <div class="row">
+        <img src="assets/images/logos/partner.png" alt="Partner">
+        <img src="assets/images/logos/bezeq-international.webp" alt="Bezeq International">
+        <img src="assets/images/logos/bezecom.png" alt="Bezecom">
+        <img src="assets/images/logos/nextcom.png" alt="Nextcom">
+        <img src="assets/images/logos/nimbus-telecom.png" alt="Nimbus Telecom" class="tall">
+        <img src="assets/images/logos/kavkom.png" alt="KavKom">
+        <img src="assets/images/logos/vocalio.svg" alt="Vocalio">
+        <img src="assets/images/logos/yallo.png" alt="Yallo">
+        <img src="assets/images/logos/memo-global.png" alt="Memo Global">
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="jobs">
+    <div class="container">
+      <h2 class="title">Three jobs it is built for</h2>
+      <p class="intro">One job first, on one network, measured against the numbers you already keep. These are the three Connectix is built to take.</p>
+      <div class="grid grid-3">
+        <div class="item">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="12" width="4" height="6" rx="1.5"/><rect x="17" y="12" width="4" height="6" rx="1.5"/><path d="M19 18v1a2 2 0 0 1-2 2h-4"/></svg></div>
+          <h3>Tier-1 support</h3>
+          <hr class="rule">
+          <p>A subscriber calls the support line. The bot answers, looks up the subscriber's registration and recent calls on the switch, and fixes what it safely can. Anything else goes to a person, with a summary of what was said and what was found.</p>
+        </div>
+        <div class="item">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2 6 4-14 2 8 2-4h4"/></svg></div>
+          <h3>NOC watch</h3>
+          <hr class="rule">
+          <p>The bot reads the switch's events: registrations, failed calls, answer-seizure ratio, trunk errors. It explains a fault in plain words and raises an alert. An action on the switch is fenced and waits for a person's approval.</p>
+        </div>
+        <div class="item">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="8" cy="6" r="2" fill="#fff"/><circle cx="15" cy="12" r="2" fill="#fff"/><circle cx="11" cy="18" r="2" fill="#fff"/></svg></div>
+          <h3>Provisioning</h3>
+          <hr class="rule">
+          <p>Numbers, extensions and devices through your own provisioning API, asked for in chat or on a call. Each request and its result are written down, so the change can be read back later.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="how">
+    <div class="container">
+      <h2 class="title">How it works</h2>
+      <p class="intro">Connectix sits next to FreeSWITCH. The switch keeps doing the telephony; Connectix listens, speaks, looks things up and asks before it acts.</p>
+      <div class="grid grid-5 flow">
+        <div class="card">
+          <h4>It reads the switch</h4>
+          <p>FreeSWITCH's Event Socket, read directly or through a small agent installed beside the switch. Every event passes through one pipeline with bounded buffers and is kept in a store with retention.</p>
+        </div>
+        <div class="card">
+          <h4>It hears the call</h4>
+          <p>mod_earshot streams an answered call's audio to Connectix over a WebSocket. Speech becomes text, the bot answers, the answer is spoken back. The caller can interrupt.</p>
+        </div>
+        <div class="card">
+          <h4>It has its own line</h4>
+          <p>Connectix registers a SIP account like any extension and places or takes calls on it, so the bot has a number of its own on your switch.</p>
+        </div>
+        <div class="card">
+          <h4>It hands off with a summary</h4>
+          <p>When a person should take the call, they get it together with a written summary of the conversation and of what was looked up.</p>
+        </div>
+        <div class="card">
+          <h4>It acts behind approvals</h4>
+          <p>Transfer, hang up, dial, a change on the switch: each action is whitelisted on the switch and waits for an approval on Connectix's side. Both fences hold.</p>
+        </div>
+      </div>
+      <div class="path" aria-label="The path of a call">
+        <span>Call on the switch</span><b>&rarr;</b><span>Audio and events to Connectix</span><b>&rarr;</b><span>The bot answers</span><b>&rarr;</b><span>Lookups on the switch</span><b>&rarr;</b><span>Handoff with a summary, or an approved action</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="where">
+    <div class="container">
+      <h2 class="title">It runs where you run</h2>
+      <p class="intro">The same program, in two places. Call records, events and recordings stay on your hardware. The speech and language models are the providers you configure.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="label">On your servers</div>
+          <h3>One container next to FreeSWITCH</h3>
+          <p>The bot, the event pipeline, the voice path, the chat and the reports in one container on your network. It connects to the switch over the Event Socket and mod_earshot; a second switch gets a small agent that forwards its events.</p>
+          <p>Configuration is environment variables. Secrets are named in files and read from the environment; they are never written to disk by Connectix.</p>
+        </div>
+        <div class="card">
+          <div class="label">On an operator's PC</div>
+          <h3>A Windows desktop app</h3>
+          <p>A window with a softphone that registers to your PBX over SIP and carries the call's audio both ways, plus the chat with the bot and the reports. One install is one agent.</p>
+          <p>The installer is on <a href="https://github.com/connectix-io/releases">GitHub Releases</a>, with a checksum file for each version.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="built">
+    <div class="container">
+      <h2 class="title">Built on Elixir and OTP</h2>
+      <p class="intro">Connectix is one Elixir application. The parts that matter on a telecom network are the ones that keep running.</p>
+      <div class="grid grid-3">
+        <div>
+          <h3>Supervised</h3>
+          <p>Every long-lived part, from the switch connection to the call's audio, is a supervised process. A failure restarts that part, not the program.</p>
+        </div>
+        <div>
+          <h3>Bounded</h3>
+          <p>Every buffer has a size. When a switch sends more than Connectix can take, the oldest events are dropped, counted and logged once, and the rest keeps flowing.</p>
+        </div>
+        <div>
+          <h3>Watched</h3>
+          <p>A connection that can die silently is monitored on both ends, with keepalives and a deadman timer. It reconnects with backoff, from one second up to thirty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Looking for a first pilot</h2>
+      <p>Connectix is early. We want to run it on one telecom company's network, on one of the three jobs, and measure the result against your own numbers. If that could be you, write to us.</p>
+      <div class="actions center">
+        <a class="btn btn-primary" href="contact.html">Talk to us</a>
+        <a class="btn btn-outline" href="product.html">What is in the product</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container top">
+    <div>
+      <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
+      <p class="blurb">A telecom bot for VoIP providers, ITSPs and carriers. It runs on your servers, next to your switch, and works alongside your team.</p>
+    </div>
+    <div>
+      <h3>Product</h3>
+      <ul>
+        <li><a href="product.html">What it does</a></li>
+        <li><a href="https://github.com/connectix-io/releases">Download for Windows</a></li>
+        <li><a href="https://github.com/connectix-io/releases">Releases</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="container">&copy; 2026 Connectix. Developed in Israel.</div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
