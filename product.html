@@ -1,33 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Connectix product: the softphone, the bot on calls, events, chat and reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Connectix</title>
   <meta name="description" content="What is in Connectix: a Windows softphone, a bot that takes calls through FreeSWITCH's mod_earshot, an event pipeline with screen pops, a chat with the bot, and reports over the calls. One Elixir application.">
+  <meta name="author" content="Connectix">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 
 <header class="header">
   <div class="container">
-    <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
+    <a class="brand" href="index.html" aria-label="Connectix home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 61" width="190" height="61" role="img" aria-label="Connectix">
+        <defs><clipPath id="cx-clip-h"><circle cx="60" cy="60" r="54"/></clipPath></defs>
+        <g transform="translate(0.5 0.5) scale(0.5)">
+          <g clip-path="url(#cx-clip-h)"><rect x="0" y="0" width="60" height="120" fill="#BFE4E6"/><rect x="60" y="0" width="60" height="120" fill="#8FCDD0"/></g>
+          <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><path d="M60 28 L88 44 L60 60 L32 44 Z" fill="#6B7280"/><path d="M32 44 L60 60 L60 94 L32 78 Z"/><path d="M88 44 L60 60 L60 94 L88 78 Z"/></g>
+        </g>
+        <text class="word" x="68" y="39" font-family="Rubik, 'Open Sans', Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="0.3" fill="#ffffff">Connectix</text>
+      </svg>
+    </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
-      <span></span><span></span><span></span><span class="sr-only">Menu</span>
+      <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
     </button>
     <nav class="nav" id="nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#who">Who we serve</a></li>
+        <li><a href="index.html#platform">Platform</a></li>
+        <li><a href="index.html#feature">Deploy</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#logos">Customers</a></li>
         <li><a href="product.html" aria-current="page">Product</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a class="nav-cta" href="https://github.com/connectix-io/releases">Download</a></li>
       </ul>
     </nav>
   </div>
@@ -35,15 +49,41 @@
 
 <main>
 
-  <section class="hero hero-small center">
+  <section class="hero hero-small">
     <div class="container">
-      <span class="eyebrow">Product</span>
       <h1>What is in Connectix</h1>
       <p class="lead">The bot is the product. The softphone, the voice path, the event pipeline, the chat and the reports are how it hears, speaks, looks things up and shows its work. All of it is one Elixir application, shipped as one binary.</p>
     </div>
   </section>
 
-  <section class="feature" id="softphone">
+  <section class="section" id="jobs">
+    <div class="container">
+      <h2 class="title">Three jobs it is built for</h2>
+      <p class="intro">One job first, on one network, measured against the numbers you already keep. These are the three Connectix is built to take.</p>
+      <div class="grid grid-3">
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="12" width="4" height="6" rx="1.5"/><rect x="17" y="12" width="4" height="6" rx="1.5"/><path d="M19 18v1a2 2 0 0 1-2 2h-4"/></svg></div>
+          <h3 class="upper">Tier-1 support</h3>
+          <hr>
+          <p>A subscriber calls the support line. The bot answers, looks up the subscriber's registration and recent calls on the switch, and fixes what it safely can. Anything else goes to a person, with a summary of what was said and what was found.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2 6 4-14 2 8 2-4h4"/></svg></div>
+          <h3 class="upper">NOC watch</h3>
+          <hr>
+          <p>The bot reads the switch's events: registrations, failed calls, answer-seizure ratio, trunk errors. It explains a fault in plain words and raises an alert. An action on the switch is fenced and waits for a person's approval.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="8" cy="6" r="2" fill="#fff"/><circle cx="15" cy="12" r="2" fill="#fff"/><circle cx="11" cy="18" r="2" fill="#fff"/></svg></div>
+          <h3 class="upper">Provisioning</h3>
+          <hr>
+          <p>Numbers, extensions and devices through your own provisioning API, asked for in chat or on a call. Each request and its result are written down, so the change can be read back later.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature section-soft" id="softphone">
     <div class="container">
       <div class="inner">
         <div>
@@ -64,7 +104,7 @@
     </div>
   </section>
 
-  <section class="feature section-soft" id="voice">
+  <section class="feature" id="voice">
     <div class="container">
       <div class="inner">
         <div>
@@ -88,7 +128,7 @@
     </div>
   </section>
 
-  <section class="feature" id="events">
+  <section class="feature section-soft" id="events">
     <div class="container">
       <div class="inner">
         <div>
@@ -112,7 +152,7 @@
     </div>
   </section>
 
-  <section class="feature section-soft" id="chat">
+  <section class="feature" id="chat">
     <div class="container">
       <div class="inner">
         <div>
@@ -132,7 +172,7 @@
     </div>
   </section>
 
-  <section class="feature" id="reports">
+  <section class="feature section-soft" id="reports">
     <div class="container">
       <div class="inner">
         <div>
@@ -149,7 +189,7 @@
     </div>
   </section>
 
-  <section class="feature section-soft" id="hood">
+  <section class="feature" id="hood">
     <div class="container">
       <div class="inner">
         <div>
@@ -169,21 +209,21 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-soft">
     <div class="container narrow">
       <div class="note">
-        <p><strong>Where it stands.</strong> The softphone, the event pipeline, the voice path, the chat and the reports are built and tested against a test PBX. The bot's first job on a real telecom network is what we are looking for a pilot for. We do not publish customer numbers because we do not have any yet.</p>
+        <p><strong>Where it stands.</strong> The softphone, the event pipeline, the voice path, the chat and the reports are built and tested against a test PBX. The bot's first job on a real telecom network is what we are looking for a pilot for.</p>
       </div>
     </div>
   </section>
 
   <section class="cta">
     <div class="container">
-      <h2>See it on your switch</h2>
+      <h2 class="title">See it on your switch</h2>
       <p>Tell us which switch you run and which of the three jobs you have in mind. We will answer with what it takes to run a pilot.</p>
       <div class="actions center">
-        <a class="btn btn-primary" href="contact.html">Talk to us</a>
-        <a class="btn btn-outline" href="https://github.com/connectix-io/releases">Download for Windows</a>
+        <a class="btn btn-cta btn-lg" href="contact.html">Talk to us</a>
+        <a class="btn btn-ghost btn-lg" href="https://github.com/connectix-io/releases">Download for Windows</a>
       </div>
     </div>
   </section>
@@ -193,27 +233,48 @@
 <footer class="footer">
   <div class="container top">
     <div>
-      <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
-      <p class="blurb">A telecom bot for VoIP providers, ITSPs and carriers. It runs on your servers, next to your switch, and works alongside your team.</p>
-    </div>
-    <div>
-      <h3>Product</h3>
-      <ul>
-        <li><a href="product.html">What it does</a></li>
-        <li><a href="https://github.com/connectix-io/releases">Download for Windows</a></li>
-        <li><a href="https://github.com/connectix-io/releases">Releases</a></li>
-      </ul>
+      <a class="brand" href="index.html" aria-label="Connectix home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 61" width="190" height="61" role="img" aria-label="Connectix">
+          <defs><clipPath id="cx-clip-f"><circle cx="60" cy="60" r="54"/></clipPath></defs>
+          <g transform="translate(0.5 0.5) scale(0.5)">
+            <g clip-path="url(#cx-clip-f)"><rect x="0" y="0" width="60" height="120" fill="#BFE4E6"/><rect x="60" y="0" width="60" height="120" fill="#8FCDD0"/></g>
+            <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><path d="M60 28 L88 44 L60 60 L32 44 Z" fill="#6B7280"/><path d="M32 44 L60 60 L60 94 L32 78 Z"/><path d="M88 44 L60 60 L60 94 L88 78 Z"/></g>
+          </g>
+          <text class="word" x="68" y="39" font-family="Rubik, 'Open Sans', Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="0.3" fill="#ffffff">Connectix</text>
+        </svg>
+      </a>
+      <p class="blurb">Connect AI agents to phone numbers and SIP carriers. Run the voice infrastructure in your cloud, at your sites or with us.</p>
     </div>
     <div>
       <h3>Company</h3>
       <ul>
+        <li><a href="index.html#who">Who we serve</a></li>
+        <li><a href="index.html#platform">How we work</a></li>
+        <li><a href="product.html">Product</a></li>
         <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Get In Touch</h3>
+      <address>
+        1 Shenkar St.<br>
+        Herzliyya<br>
+        Israel
+      </address>
+      <ul>
         <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Downloads</h3>
+      <ul>
+        <li><a href="https://github.com/connectix-io/releases">Download for Windows</a></li>
+        <li><a href="https://github.com/connectix-io/releases">Releases</a></li>
       </ul>
     </div>
   </div>
   <div class="bottom">
-    <div class="container">&copy; 2026 Connectix. Developed in Israel.</div>
+    <div class="container">&copy; 2026 Connectix &mdash; dedicated to communicating better</div>
   </div>
 </footer>
 

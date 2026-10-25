@@ -1,33 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Connectix: a telecom bot that works alongside your team</title>
-  <meta name="description" content="Connectix is an AI agent for VoIP providers, ITSPs and carriers. It runs on your servers next to FreeSWITCH, reads the switch's events and a call's audio, answers on its own SIP line, hands calls to a person with a summary, and acts only behind approvals.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dedicated to communicating better | Connectix</title>
+  <meta name="description" content="Connect AI agents and voice products to phone numbers and SIP carriers, then build, test, deploy and operate the voice layer on your infrastructure or ours.">
+  <meta name="author" content="Connectix">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body class="home-page">
 
 <header class="header">
   <div class="container">
-    <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
+    <a class="brand" href="index.html" aria-label="Connectix home">
+      <!-- assets/images/connectix-logo-white.svg, inlined so the page's Rubik applies to the word -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 61" width="190" height="61" role="img" aria-label="Connectix">
+        <defs><clipPath id="cx-clip-h"><circle cx="60" cy="60" r="54"/></clipPath></defs>
+        <g transform="translate(0.5 0.5) scale(0.5)">
+          <g clip-path="url(#cx-clip-h)"><rect x="0" y="0" width="60" height="120" fill="#BFE4E6"/><rect x="60" y="0" width="60" height="120" fill="#8FCDD0"/></g>
+          <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><path d="M60 28 L88 44 L60 60 L32 44 Z" fill="#6B7280"/><path d="M32 44 L60 60 L60 94 L32 78 Z"/><path d="M88 44 L60 60 L60 94 L88 78 Z"/></g>
+        </g>
+        <text class="word" x="68" y="39" font-family="Rubik, 'Open Sans', Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="0.3" fill="#ffffff">Connectix</text>
+      </svg>
+    </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
-      <span></span><span></span><span></span><span class="sr-only">Menu</span>
+      <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
     </button>
     <nav class="nav" id="nav" aria-label="Main">
       <ul>
         <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="index.html#who">Who we serve</a></li>
+        <li><a href="index.html#platform">Platform</a></li>
+        <li><a href="index.html#feature">Deploy</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#logos">Customers</a></li>
         <li><a href="product.html">Product</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a class="nav-cta" href="https://github.com/connectix-io/releases">Download</a></li>
       </ul>
     </nav>
   </div>
@@ -35,145 +50,431 @@
 
 <main>
 
-  <section class="hero center">
+  <!-- Hero: voipappz.com (branch rotem) home-promo; the headline is the owner's slogan -->
+  <section id="home-promo" class="hero">
     <div class="container">
-      <span class="eyebrow">A telecom bot</span>
-      <h1>An agent that works on your network, alongside your team.</h1>
-      <p class="lead">Connectix is an AI agent for VoIP providers, ITSPs and carriers. It runs next to your switch, reads its events and the audio of a call, and answers on a SIP line of its own. When a person should take over, it hands the call to them with a written summary. It changes nothing on the switch without an approval.</p>
-      <div class="actions center">
-        <a class="btn btn-primary" href="contact.html">Talk to us</a>
-        <a class="btn btn-ghost" href="https://github.com/connectix-io/releases">Download for Windows</a>
-      </div>
-      <span class="btn-note">The desktop app, Windows x64, from GitHub Releases.</span>
+      <span class="brand-word">Connectix</span>
+      <h1>Dedicated to communicating better</h1>
+      <p class="lead">Connect AI agents to phone numbers and SIP carriers. Run the voice infrastructure in your cloud, at your sites or with us.</p>
+      <a href="contact.html" class="btn btn-cta btn-lg">Talk to us</a>
     </div>
   </section>
+  <div class="hero-tail" aria-hidden="true"></div>
 
-  <div class="trust">
+  <!-- Platform differentiators: voipappz.com #platform -->
+  <section id="platform" class="section">
     <div class="container">
-      <div class="lbl">Telecom companies we have worked with</div>
-      <div class="row">
-        <img src="assets/images/logos/partner.png" alt="Partner">
-        <img src="assets/images/logos/bezeq-international.webp" alt="Bezeq International">
-        <img src="assets/images/logos/bezecom.png" alt="Bezecom">
-        <img src="assets/images/logos/nextcom.png" alt="Nextcom">
-        <img src="assets/images/logos/nimbus-telecom.png" alt="Nimbus Telecom" class="tall">
-        <img src="assets/images/logos/kavkom.png" alt="KavKom">
-        <img src="assets/images/logos/vocalio.svg" alt="Vocalio">
-        <img src="assets/images/logos/yallo.png" alt="Yallo">
-        <img src="assets/images/logos/memo-global.png" alt="Memo Global">
-      </div>
-    </div>
-  </div>
-
-  <section class="section" id="jobs">
-    <div class="container">
-      <h2 class="title">Three jobs it is built for</h2>
-      <p class="intro">One job first, on one network, measured against the numbers you already keep. These are the three Connectix is built to take.</p>
+      <h2 class="title">Connectix Platform Differentiators</h2>
       <div class="grid grid-3">
         <div class="item">
-          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="12" width="4" height="6" rx="1.5"/><rect x="17" y="12" width="4" height="6" rx="1.5"/><path d="M19 18v1a2 2 0 0 1-2 2h-4"/></svg></div>
-          <h3>Tier-1 support</h3>
-          <hr class="rule">
-          <p>A subscriber calls the support line. The bot answers, looks up the subscriber's registration and recent calls on the switch, and fixes what it safely can. Anything else goes to a person, with a summary of what was said and what was found.</p>
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 3 8 7 9.5 4-1.5 7-5.1 7-9.5V6l-7-3z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3 class="upper">Decentralized architecture</h3>
+          <hr>
+          <p>Create separate, segmented environments between your clients for full analysis and utilization. It simplifies management and billing, supports clear security boundaries, and provides white-label options with customer subdomains, storage and portals.</p>
         </div>
         <div class="item">
-          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2 6 4-14 2 8 2-4h4"/></svg></div>
-          <h3>NOC watch</h3>
-          <hr class="rule">
-          <p>The bot reads the switch's events: registrations, failed calls, answer-seizure ratio, trunk errors. It explains a fault in plain words and raises an alert. An action on the switch is fenced and waits for a person's approval.</p>
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 4 12 6v4l-3.5 2L5 10V6l3.5-2zM15.5 10 19 12v4l-3.5 2L12 16v-4l3.5-2zM8.5 12 12 14v4l-3.5 2L5 18v-4l3.5-2z"/></svg></div>
+          <h3 class="upper">Independence</h3>
+          <hr>
+          <p>Select your own infrastructure resources for each client &mdash; SIP termination, SIP-compatible phones and recording storage &mdash; with no middleman. Buy termination, SMS and storage directly from the providers of your choice.</p>
         </div>
         <div class="item">
-          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="8" cy="6" r="2" fill="#fff"/><circle cx="15" cy="12" r="2" fill="#fff"/><circle cx="11" cy="18" r="2" fill="#fff"/></svg></div>
-          <h3>Provisioning</h3>
-          <hr class="rule">
-          <p>Numbers, extensions and devices through your own provisioning API, asked for in chat or on a call. Each request and its result are written down, so the change can be read back later.</p>
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v4M5 17v-3h14v3M12 11v6"/></svg></div>
+          <h3 class="upper">Customization</h3>
+          <hr>
+          <p>Built on a documented REST API for integration with your in-house systems. Connectix provides custom development, upgrades and new features for the requirements agreed in each project.</p>
         </div>
       </div>
+      <hr class="wide-hr">
+      <p class="center">Use your carriers, infrastructure and existing product. Adapt the platform where the project requires it.</p>
     </div>
   </section>
 
-  <section class="section section-soft" id="how">
+  <!-- Who uses: voipappz.com #WhoCanUseVoipbox -->
+  <section id="who" class="section section-soft who">
     <div class="container">
-      <h2 class="title">How it works</h2>
-      <p class="intro">Connectix sits next to FreeSWITCH. The switch keeps doing the telephony; Connectix listens, speaks, looks things up and asks before it acts.</p>
-      <div class="grid grid-5 flow">
-        <div class="card">
-          <h4>It reads the switch</h4>
-          <p>FreeSWITCH's Event Socket, read directly or through a small agent installed beside the switch. Every event passes through one pipeline with bounded buffers and is kept in a store with retention.</p>
+      <h2 class="title">Who uses Connectix</h2>
+      <hr class="triband-hr">
+      <div class="grid grid-4">
+        <div>
+          <h4>Telecom and service providers</h4>
+          <p>Operate customer accounts, numbers, routing, rate plans and billing from one system. Keep carrier relationships direct and give customers their own branded access.</p>
         </div>
-        <div class="card">
-          <h4>It hears the call</h4>
-          <p>mod_earshot streams an answered call's audio to Connectix over a WebSocket. Speech becomes text, the bot answers, the answer is spoken back. The caller can interrupt.</p>
+        <div>
+          <h4>Build your own product</h4>
+          <p>Connect an AI agent, CRM, helpdesk or other application to phone numbers and carriers. Keep the product and its business logic.</p>
         </div>
-        <div class="card">
-          <h4>It has its own line</h4>
-          <p>Connectix registers a SIP account like any extension and places or takes calls on it, so the bot has a number of its own on your switch.</p>
+        <div>
+          <h4>Contact centers and software teams</h4>
+          <p>Add browser calling, queues, campaigns and call records to the systems your team already uses.</p>
         </div>
-        <div class="card">
-          <h4>It hands off with a summary</h4>
-          <p>When a person should take the call, they get it together with a written summary of the conversation and of what was looked up.</p>
-        </div>
-        <div class="card">
-          <h4>It acts behind approvals</h4>
-          <p>Transfer, hang up, dial, a change on the switch: each action is whitelisted on the switch and waits for an approval on Connectix's side. Both fences hold.</p>
+        <div>
+          <h4>Enterprise and private networks</h4>
+          <p>Run voice at a customer site, in a private cloud or across multiple sites. Keep signaling, media, call records and recordings inside the required infrastructure boundary.</p>
         </div>
       </div>
-      <div class="path" aria-label="The path of a call">
-        <span>Call on the switch</span><b>&rarr;</b><span>Audio and events to Connectix</span><b>&rarr;</b><span>The bot answers</span><b>&rarr;</b><span>Lookups on the switch</span><b>&rarr;</b><span>Handoff with a summary, or an approved action</span>
+      <h3 class="title small">If you already have a system</h3>
+      <p class="intro tight">Keep it. Connectix connects the application to phone numbers and SIP carriers and provides the routing, recordings, billing and operational tools around it.</p>
+      <div class="grid grid-4">
+        <div>
+          <h4>Your application</h4>
+          <p>Keep the AI agent, CRM, helpdesk, browser application or workflow your users already know.</p>
+        </div>
+        <div>
+          <h4>Your carriers and numbers</h4>
+          <p>Use the compatible SIP carriers, phone numbers and rate plans that fit your operation.</p>
+        </div>
+        <div>
+          <h4>Your infrastructure</h4>
+          <p>Choose the cloud account, servers, networks and storage used for calls, data and recordings.</p>
+        </div>
+        <div>
+          <h4>Your operating rules</h4>
+          <p>Set access, retention, maintenance and support requirements for each deployment.</p>
+        </div>
       </div>
+      <hr class="triband-hr">
+      <p class="center narrow"><strong>How it works:</strong> Connect the application. Map numbers and carriers. Install the agreed voice nodes. Verify the call path. Operate through the portal, API or CLI. <a href="contact.html">Discuss your system</a>.</p>
     </div>
   </section>
 
-  <section class="section" id="where">
+  <!-- voipappz testimonials, carried over on 2026-10-25, owner to confirm.
+       The quotes are reproduced as written on voipappz.com (branch rotem),
+       names inside the quotes included. -->
+  <section id="testimonials" class="section">
     <div class="container">
-      <h2 class="title">It runs where you run</h2>
-      <p class="intro">The same program, in two places. Call records, events and recordings stay on your hardware. The speech and language models are the providers you configure.</p>
+      <h2 class="title">Customer references</h2>
+      <p class="intro">Comments from teams we have worked with on production communications projects.</p>
       <div class="grid grid-2">
-        <div class="card">
-          <div class="label">On your servers</div>
-          <h3>One container next to FreeSWITCH</h3>
-          <p>The bot, the event pipeline, the voice path, the chat and the reports in one container on your network. It connects to the switch over the Event Socket and mod_earshot; a second switch gets a small agent that forwards its events.</p>
-          <p>Configuration is environment variables. Secrets are named in files and read from the environment; they are never written to disk by Connectix.</p>
+        <div class="quote-card">
+          <blockquote>Last year I worked with voipappz to develop and integrate stress tests for Meucci&rsquo;s VoIP Servers. Nir Levi, head of voipappz, effortlessly led the project and trained the company&rsquo;s development team to understand the technology. I was impressed with his work and so we continued to have him consult us on FreeSwitch, WebRTC, and other general VoIP technologies. Nir strives to satisfy his customers and make complex projects simple. The voipappz approach to customer service streamlines and facilitates the complex world of VOIP technology.</blockquote>
+          <p class="name">Yuval Cnaann <span class="source-title">Co-Founder &amp; COO, Meucci</span></p>
         </div>
-        <div class="card">
-          <div class="label">On an operator's PC</div>
-          <h3>A Windows desktop app</h3>
-          <p>A window with a softphone that registers to your PBX over SIP and carries the call's audio both ways, plus the chat with the bot and the reports. One install is one agent.</p>
-          <p>The installer is on <a href="https://github.com/connectix-io/releases">GitHub Releases</a>, with a checksum file for each version.</p>
+        <div class="quote-card">
+          <blockquote>I have been collaborating with Nir Levi, head of voipappz, for over a year now on several projects, Robohold being the current one. Nir uses a simple support-oriented approach and is personally invested in any project he takes on, availing himself at all hours and making sure we are 100% satisfied with the final product. voipappz really makes an effort to understand our needs and concerns, and pays particular attention to our time constraints. It is certainly worthwhile to work with voipappz, particularly because of the ongoing training and support it gives our team.</blockquote>
+          <p class="name">Yaron Gavish <span class="source-title">CEO &amp; Founder, RoboHold</span></p>
+        </div>
+        <div class="quote-card">
+          <blockquote>Recently, we developed and implemented a comprehensive communication solution for MEMO Global&rsquo;s Call Center at our Haifa Site, based on voipappz&rsquo;s VoIPBOX solution. Nir heads voipappz with devotion and gives customers a personal touch. I would recommend voipappz to anyone looking to add dependable WebRTC communication to a global CRM application.</blockquote>
+          <p class="name">Eyal Noam <span class="source-title">CIO, MEMO Global</span></p>
+        </div>
+        <div class="quote-card">
+          <blockquote>We have been working with voipappz for over a year on the IOT Project for Toyota-Connected. We were interested in boosting flexibility, technical capabilities, joint operations with our overseas teams, and a personalized touch. Thanks to voipappz, we reached the POC quickly and received an immediate response to evolving issues. We are more than happy to recommend voipappz and continue collaborating with them in the future.</blockquote>
+          <p class="name">Gal Melamed <span class="source-title">Director of Data Product Management and Business Innovation at Toyota Connected Europe</span></p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-dark" id="built">
+  <!-- Platform features: voipappz.com #feature -->
+  <section id="feature" class="section section-soft">
     <div class="container">
-      <h2 class="title">Built on Elixir and OTP</h2>
-      <p class="intro">Connectix is one Elixir application. The parts that matter on a telecom network are the ones that keep running.</p>
+      <h2 class="title">Platform features</h2>
+      <p class="intro">The delivery controls and operating features needed to run calls, customers, providers, data and integrations from one platform.</p>
+      <h3 class="title small">Choose where each tested release runs</h3>
       <div class="grid grid-3">
-        <div>
-          <h3>Supervised</h3>
-          <p>Every long-lived part, from the switch connection to the call's audio, is a supervised process. A failure restarts that part, not the program.</p>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18H5a3 3 0 0 1-.4-6A6.5 6.5 0 0 1 17 10a4 4 0 0 1 1 7.9"/><rect x="8" y="13" width="8" height="7" rx="1"/><path d="M10 16h4"/></svg></div>
+          <h3>Managed cloud</h3>
+          <hr>
+          <p>We run the platform for you. Connect your product and carrier accounts, then manage customers, calls and operations without maintaining the platform hosts.</p>
         </div>
-        <div>
-          <h3>Bounded</h3>
-          <p>Every buffer has a size. When a switch sends more than Connectix can take, the oldest events are dropped, counted and logged once, and the rest keeps flowing.</p>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="11" height="18" rx="2"/><path d="M7 7h5M7 11h5M7 15h3M18 8c1.5 1.2 2 2.5 2 4s-.5 2.8-2 4M16 10c.8.6 1 1.3 1 2s-.2 1.4-1 2"/></svg></div>
+          <h3>Voice node at your site</h3>
+          <hr>
+          <p>Keep call processing close to your carriers or customer network on a server you control. We install and verify it; your team keeps the agreed data, recording and network boundaries. Existing PBX systems can remain connected.</p>
         </div>
-        <div>
-          <h3>Watched</h3>
-          <p>A connection that can die silently is monitored on both ends, with keepalives and a deadman timer. It reconnects with backoff, from one second up to thirty.</p>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="8" height="8" rx="2"/><circle cx="4" cy="4" r="2"/><circle cx="20" cy="4" r="2"/><circle cx="4" cy="20" r="2"/><circle cx="20" cy="20" r="2"/><path d="m6 6 2 2M18 6l-2 2M6 18l2-2M18 18l-2-2"/></svg></div>
+          <h3>Self-hosted control system</h3>
+          <hr>
+          <p>Run the control system in your own environment. Your team controls the domain, users, data, recordings, access rules and operating procedures while the same voice-node model serves each site.</p>
         </div>
+      </div>
+
+      <div id="architecture-flow">
+        <h3 class="title small">From code to running voice</h3>
+        <p class="intro tight">The delivery loop builds and verifies each release. After deployment, the runtime layers route calls, process media and report health across the node fleet.</p>
+        <div class="grid grid-3">
+          <div class="flow-card"><div class="flow-label">Your team</div><h4>Agent, application and operations</h4><p>Keep your agent and product logic. Give users the portal, browser calling and customer views they need, with services, workflows, billing and reports in the same operating model.</p></div>
+          <div class="flow-card"><div class="flow-label">Call entry</div><h4>Ingress and load balancing</h4><p>Incoming calls reach a dedicated voice edge, which applies the route and selects a voice node. Add an active-active entry pair when availability requires it.</p></div>
+          <div class="flow-card"><div class="flow-label">Call processing</div><h4>Voice nodes by site or capacity</h4><p>Run media, recordings and PBX services near a carrier, customer network or local data boundary. Add nodes as your sites or call capacity grow.</p></div>
+          <div class="flow-card"><div class="flow-label">Your providers</div><h4>Carrier egress under your policy</h4><p>Each node sends outbound traffic over the trunk selected by your routing and cost rules. Keep existing PBX systems connected as SIP peers.</p></div>
+          <div class="flow-card"><div class="flow-label">Stable operations</div><h4>Separate releases from call handling</h4><p>Release the portal independently from the voice fleet. Pin node images, validate every node before service and keep a defined rollback path.</p></div>
+          <div class="flow-card"><div class="flow-label">Delivery</div><h4>CI, installer and CLI</h4><p>Build and prove the node image in CI. Install and verify each node from the command line; health checks and monitoring continue after deployment.</p></div>
+        </div>
+        <div class="release-path-label">The VoIP delivery loop</div>
+        <div class="release-path" aria-label="VoIP delivery process"><span>Source and configuration</span><b>&rarr;</b><span>Code and image gates</span><b>&rarr;</b><span>Real SIP round-trip</span><b>&rarr;</b><span>Versioned release</span><b>&rarr;</b><span>Install node fleet</span><b>&rarr;</b><span>Health verdict</span><b>&rarr;</b><span>Monitor</span></div>
+      </div>
+
+      <div class="grid grid-4" style="margin-top:40px">
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 8h18M8.5 11 6 13.5 8.5 16M15.5 11l2.5 2.5-2.5 2.5M13 10l-2 7"/></svg></div>
+          <h3>WebRTC calling in your application</h3>
+          <hr>
+          <p>Run a softphone in the browser for assigned extensions, with calling, hold, transfer, mute and DTMF&mdash;without a separate desk-phone workflow.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 3.5 9 4l1 4-2 1.4a12 12 0 0 0 6 6L15.5 14l4 1 .5 2.4a2 2 0 0 1-2 2.2A16 16 0 0 1 4.3 5.5a2 2 0 0 1 2.2-2z"/><path d="m14 5 2-2 2 2M16 3v6"/></svg></div>
+          <h3>Portal and Chrome extension</h3>
+          <hr>
+          <p>Use the portal for call state and agent availability. Add the optional Chrome extension for a configured CRM screen pop beside the browser tools agents already use.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.4-4 2.2-6 5.5-6s5.1 2 5.5 6M13.5 15c1-.8 2.1-1.2 3.5-1.2 2.8 0 4.2 1.7 4.5 5"/></svg></div>
+          <h3>Services and workflows</h3>
+          <hr>
+          <p>Connect calls to CRM, webhooks, email, SMS and provisioning through the service and workflow definitions your business needs.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h11M4 17h16M15 4l4 3-4 3M9 14l-4 3 4 3"/></svg></div>
+          <h3>Billing and rate plans</h3>
+          <hr>
+          <p>Apply tariffs and plans, run prepaid or postpaid accounts, meter call usage and enforce balance rules before a call costs you money.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-2.6V20a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1-1.8-1.8.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H6v-2.6h.2a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 1.8-1.8.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6V5h2.6v.2a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.8 1.8-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v2.6h-.2a1.7 1.7 0 0 0-1.6 1z"/></svg></div>
+          <h3>Call control interfaces</h3>
+          <hr>
+          <p>Start, transfer and end calls from your application, then retrieve the resulting call records.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 9-3 3 3 3M16 9l3 3-3 3M14 6l-4 12"/></svg></div>
+          <h3>Developer console</h3>
+          <hr>
+          <p>Connect your product through the API, tokens and event callbacks. Test locally, inspect call events and ship changes without learning every telecom detail.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h5M8 17h3"/></svg></div>
+          <h3>Call history for approved tools</h3>
+          <hr>
+          <p>A read-only MCP endpoint lets approved developer tools search locally stored call events and review one call's timeline. It cannot change the system or run arbitrary database queries.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h4l2-6 4 12 2-6h4"/><path d="M5 20h14"/></svg></div>
+          <h3>Release checks</h3>
+          <hr>
+          <p>Build the complete voice-node image, place a real SIP test call and verify each node after installation.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="8" r="2"/><circle cx="19" cy="17" r="2"/><path d="M7 5h3a4 4 0 0 1 4 4v6a2 2 0 0 0 2 2h1M14 10h3"/></svg></div>
+          <h3>Numbers and routing</h3>
+          <hr>
+          <p>Assign phone numbers and route them to menus, queues, groups or application workflows.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v2M20 12h-2M12 20v-2M4 12h2"/></svg></div>
+          <h3>Call recordings</h3>
+          <hr>
+          <p>Store, index and retrieve recordings under the retention policy and storage location you select.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V5M4 20h17M8 17v-5M13 17V8M18 17v-3"/></svg></div>
+          <h3>Reports and exports</h3>
+          <hr>
+          <p>Review call activity and operational data, query historical records and export results to CSV.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7h7a4 4 0 0 1 4 4v7M18 18l-3-3M18 18l3-3M17 7h-7a4 4 0 0 0-4 4v7M6 18l-3-3M6 18l3-3"/></svg></div>
+          <h3>Event callbacks</h3>
+          <hr>
+          <p>Notify your product when a call is answered, transferred or ended so its workflow stays in sync.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h3M16 12v4M14 14h4"/></svg></div>
+          <h3>Bring people together</h3>
+          <hr>
+          <p>Put customers and teams in the same conversation when a call needs more than one person.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0M12 18l4-6"/><circle cx="12" cy="18" r="1"/></svg></div>
+          <h3>Live operations</h3>
+          <hr>
+          <p>See active calls, registered devices and node health while the service is running.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="18" cy="9" r="2"/><path d="M3 20c.4-4 2.4-6 6-6s5.6 2 6 6M15 15c.7-.5 1.7-.8 3-.8 2.4 0 3.7 1.5 4 4.5"/></svg></div>
+          <h3>Queues and agents</h3>
+          <hr>
+          <p>Route callers into queues, assign agents and skills, and follow queue and agent state.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10v4h3l8 4V6l-8 4H4zM7 14l1 5h3M18 9c1 1 1 5 0 6"/></svg></div>
+          <h3>Outbound campaigns</h3>
+          <hr>
+          <p>Run outbound call lists with retry rules, dispositions and blacklist handling.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Business-hours routing</h3>
+          <hr>
+          <p>Send calls to the right destination for the customer&rsquo;s hours, timezone and holiday schedule.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M12 7v5M6 16v-2h12v2"/></svg></div>
+          <h3>Voice menus</h3>
+          <hr>
+          <p>Build scripted menus, announcements and text-to-speech flows for customer-specific call handling.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></div>
+          <h3>Voicemail to email</h3>
+          <hr>
+          <p>Deliver voicemail notifications and recordings using customer-specific email templates.</p>
+        </div>
+        <div class="item">
+          <div class="icon small" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+          <h3>Customer portals</h3>
+          <hr>
+          <p>Give customers branded access to the resources and views assigned to their account.</p>
+        </div>
+      </div>
+      <hr class="wide-hr">
+      <p class="center"><strong>Free trial:</strong> evaluate the platform with your team before choosing a deployment. <a href="contact.html">Contact us</a> to arrange access and review your requirements.</p>
+    </div>
+  </section>
+
+  <!-- voipappz pricing, carried over on 2026-10-25, owner to confirm.
+       Tiers, prices and notes are reproduced from voipappz.com (branch rotem). -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="title">Pricing that follows your deployment</h2>
+      <p class="pricing-lead">PCloud is billed monthly by capacity. Each tier has a maximum number of concurrent calls and users or extensions. Pay annually and save 10%.</p>
+      <p class="center" style="margin-bottom:14px">A concurrent call is an active internal or external call. Users include extensions. It is not a per-seat price.</p>
+      <div class="pricing-table" role="table" aria-label="PCloud subscription plans">
+        <div class="pricing-row head" role="row"><span role="columnheader">Tier</span><span role="columnheader">Concurrent calls</span><span role="columnheader">Max users / extensions</span><span role="columnheader">Monthly</span><span role="columnheader">Yearly &middot; save 10%</span></div>
+        <div class="pricing-row" role="row"><span class="tier">Tier 1</span><span data-label="Concurrent calls">24</span><span data-label="Max users / extensions">70</span><span data-label="Monthly">$332</span><span data-label="Yearly · save 10%">$3,586</span></div>
+        <div class="pricing-row" role="row"><span class="tier">Tier 2</span><span data-label="Concurrent calls">32</span><span data-label="Max users / extensions">120</span><span data-label="Monthly">$574</span><span data-label="Yearly · save 10%">$6,199</span></div>
+        <div class="pricing-row" role="row"><span class="tier">Tier 3</span><span data-label="Concurrent calls">48</span><span data-label="Max users / extensions">150</span><span data-label="Monthly">$751</span><span data-label="Yearly · save 10%">$8,111</span></div>
+        <div class="pricing-row" role="row"><span class="tier">Tier 4</span><span data-label="Concurrent calls">96</span><span data-label="Max users / extensions">300</span><span data-label="Monthly">$1,635</span><span data-label="Yearly · save 10%">$17,658</span></div>
+        <div class="pricing-row" role="row"><span class="tier">Tier 5</span><span data-label="Concurrent calls">128</span><span data-label="Max users / extensions">400</span><span data-label="Monthly">$1,901</span><span data-label="Yearly · save 10%">$20,531</span></div>
+        <div class="pricing-row" role="row"><span class="tier">Tier 7</span><span data-label="Concurrent calls">1,024</span><span data-label="Max users / extensions">1,550+</span><span data-label="Monthly">Custom quote</span><span data-label="Yearly">Custom quote</span></div>
+      </div>
+      <div class="included">
+        <h4>Included with every tier</h4>
+        <table>
+          <tbody>
+            <tr><th scope="row">Voice and PBX</th><td>Browser calling, extensions, phone-number routing, voice menus, voicemail, call recording and group calling.</td></tr>
+            <tr><th scope="row">Contact center</th><td>Queues, agents, skills, live call control, business-hours routing and outbound campaigns.</td></tr>
+            <tr><th scope="row">Customer operations</th><td>Customer accounts, environments, users, permissions, balances, customer portals, dashboards and reports.</td></tr>
+            <tr><th scope="row">Billing</th><td>Tariffs, rate plans, prepaid and postpaid accounts, call metering, transactions and balance rules.</td></tr>
+            <tr><th scope="row">Integrations</th><td>API access, event callbacks, services, workflows, developer tools and read-only MCP documentation resources.</td></tr>
+            <tr><th scope="row">Infrastructure</th><td>Node health, live registrations, system monitoring, command-line checks, release checks and software updates.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pricing-notes">
+        <p><strong>Billed separately:</strong> carrier charges, phone numbers, call usage, installation and custom integrations.</p>
+        <p><strong>Support and monitoring:</strong> $280 USD per month, when required. Includes node and service health checks, alerts, incident handling, maintenance coordination and service reporting. Professional services are quoted separately.</p>
+        <p><strong>One-time purchase:</strong> self-hosted deployments are available as a separate commercial offer. The quote covers the license, node capacity, installation and optional support.</p>
+      </div>
+      <p class="center"><a href="contact.html" class="btn btn-cta">Talk to us</a></p>
+      <p class="center">Every quote states the tier, user and concurrent-call capacity, deployment scope, carrier costs and support. <a href="contact.html">Discuss yours</a>.</p>
+    </div>
+  </section>
+
+  <!-- FAQs: voipappz.com #FAQ -->
+  <section id="faq" class="section section-soft">
+    <div class="container">
+      <h2 class="faq-title">Commercial and deployment FAQs</h2>
+      <div class="faq">
+        <details>
+          <summary>What does CI for VoIP mean?</summary>
+          <p>It is a repeatable delivery path for the voice layer: source and configuration checks, a complete node-image build, a real SIP round-trip, a versioned release, installation and a post-install health verdict. Project-specific carrier and acceptance tests are added to that path where required.</p>
+        </details>
+        <details>
+          <summary>Can an AI agent review previous calls?</summary>
+          <p>The current MCP interface is for approved developer and coding tools. It can search the local event store and return one call's events in time order without write access. Automatically giving a live voice agent previous recordings, transcripts or customer conversations requires a separately designed and approved integration.</p>
+        </details>
+        <details>
+          <summary>How are subscription plans priced?</summary>
+          <p>PCloud is priced by concurrent calls and maximum users or extensions. Monthly billing is standard; annual billing is shown in the table. Carrier usage, installation, integration and support are quoted separately.</p>
+        </details>
+        <details>
+          <summary>What does the self-hosted system include?</summary>
+          <p>A self-hosted deployment includes the central control system and the agreed voice nodes on your infrastructure. The written scope defines capacity, sites, data storage, updates, installation and who operates each part.</p>
+        </details>
+        <details>
+          <summary>What is billed separately?</summary>
+          <p>Carrier calling and messaging charges are separate from the platform. Migration, integration, custom development, on-site work, training, professional server deployment and support are listed in the written scope.</p>
+        </details>
+        <details>
+          <summary>Can we use our own carrier?</summary>
+          <p>Yes. Connect compatible SIP trunks and load your own rates. Your carrier relationship and carrier charges remain yours; the Connectix quote states any platform or service charges.</p>
+        </details>
+        <details>
+          <summary>What does support and monitoring include?</summary>
+          <p>The optional support and monitoring plan is $280 USD per month. It covers node and service health checks, alerts, incident handling, maintenance coordination and service reporting. Support hours, response targets, covered systems and escalation contacts are stated in the written SLA. Migration, custom development, on-site work and training are professional services and are quoted separately.</p>
+        </details>
+        <details>
+          <summary>Can Connectix integrate with an existing system?</summary>
+          <p>Yes. CRM, helpdesk and business tools connect through the API and webhooks; deeper integration is scoped in the quote.</p>
+        </details>
+        <details>
+          <summary>Where are call data and recordings stored?</summary>
+          <p>In a self-hosted deployment, the central database and recording storage run on infrastructure you select. A hybrid deployment can keep call processing and recordings at the required site. Storage location, retention, backup and access are agreed in the deployment design.</p>
+        </details>
+        <details>
+          <summary>How are access and audit handled?</summary>
+          <p>Customer separation and role-based access rules control which screens and operations an account can use. Authentication events and call activity are recorded for operational review. Any export, archive or retention requirement is defined as part of the deployment.</p>
+        </details>
+        <details>
+          <summary>Can we keep our existing communication providers?</summary>
+          <p>Yes. The architecture review defines what stays in your product, what connects to Connectix, and whether carriers, routing, recordings or customer deployments move to the Connectix layer. Your existing providers are not automatically replaced.</p>
+        </details>
+        <details>
+          <summary>What does this look like for a LiveKit application?</summary>
+          <p>Keep LiveKit as the realtime room or agent layer. Connectix can sit around it with DID and customer assignment, carrier routing, human handoff, provider-cost records, usage, invoicing and audit. The production adapter and end-to-end call proof are scoped and certified for the deployment; this is not presented as a built-in adapter today.</p>
+        </details>
+      </div>
+      <p class="faq-note">More questions? <a href="contact.html">Contact us</a>.</p>
+    </div>
+  </section>
+
+  <!-- Customers: voipappz.com #logos, its files and display sizes -->
+  <section id="logos" class="section logos">
+    <div class="container center">
+      <h2 class="title">Telecom companies we have worked with</h2>
+      <p class="intro">Telecom operators, service providers, enterprise engineering teams, call centers and software companies.</p>
+      <div class="row">
+        <img src="assets/images/logos/xphone.svg" height="54" width="147" alt="Xphone">
+        <img src="assets/images/logos/gilat-telecom-ghana.png" height="66" width="134" alt="Gilat Telecom Ghana" style="object-fit:contain">
+        <img src="assets/images/logos/bezeq-international.png" height="50" width="120" alt="Bezeq International" style="object-fit:contain">
+        <img src="assets/images/logos/partner.png" height="61" width="95" alt="Partner" style="object-fit:contain">
+        <img src="assets/images/logos/memo-global.png" height="50" width="90" alt="Memo Global">
+        <img src="assets/images/logos/vocalio.svg" height="66" width="134" alt="Vocalio">
+        <img src="assets/images/logos/bezecom.png" height="50" width="80" alt="Bezecom" style="object-fit:contain">
+        <img src="assets/images/logos/edp.png" height="66" width="134" alt="EDP" style="object-fit:contain">
+        <img src="assets/images/logos/nextcom.png" height="51" width="85" alt="Nextcom" style="object-fit:contain">
+        <img src="assets/images/logos/highcomm.png" height="50" width="120" alt="HighComm" style="object-fit:contain">
+        <img src="assets/images/logos/kavkom.png" height="50" width="120" alt="Kavkom" style="object-fit:contain">
+        <img src="assets/images/logos/yallo.png" height="50" width="100" alt="Yallo" style="object-fit:contain">
+        <img src="assets/images/logos/meucci.png" height="61" width="61" alt="Meucci">
+        <img src="assets/images/logos/robohold.png" height="61" width="61" alt="Robohold">
+        <img src="assets/images/logos/nimbus.png" height="60" width="60" alt="Nimbus" style="object-fit:contain">
+        <img src="assets/images/logos/mtn-ghana.svg" height="54" width="96" alt="MTN Ghana">
+        <img src="assets/images/logos/elbit-systems.png" height="54" width="145" alt="Elbit Systems" style="object-fit:contain">
+        <img src="assets/images/logos/wecom.svg" height="54" width="130" alt="wecom">
+        <span class="wordmark long" aria-label="TechMer and MER Group">TechMer<br>MER Group</span>
+        <span class="wordmark" aria-label="HOT Telecom">HOT Telecom</span>
       </div>
     </div>
   </section>
 
-  <section class="cta">
+  <!-- Get in touch: voipappz.com #cta-section, without the phone, the help desk links and the form -->
+  <section id="contact" class="cta">
     <div class="container">
-      <h2>Looking for a first pilot</h2>
-      <p>Connectix is early. We want to run it on one telecom company's network, on one of the three jobs, and measure the result against your own numbers. If that could be you, write to us.</p>
-      <div class="actions center">
-        <a class="btn btn-primary" href="contact.html">Talk to us</a>
-        <a class="btn btn-outline" href="product.html">What is in the product</a>
-      </div>
+      <h2 class="title">Get in touch</h2>
+      <p class="contact-info">
+        <span class="intro">Discuss your infrastructure, migration or integration</span>
+        <span class="info"><a href="contact.html">Talk to us</a></span>
+      </p>
+      <p class="contact-info">
+        <span class="intro">You can also email us</span>
+        <span class="info"><a href="contact.html">Our address is on the contact page</a></span>
+      </p>
+      <a href="contact.html" class="btn btn-cta btn-lg">Talk to us</a>
     </div>
   </section>
 
@@ -182,27 +483,49 @@
 <footer class="footer">
   <div class="container top">
     <div>
-      <a class="brand" href="index.html"><img src="assets/images/connectix-mark.svg" alt="" width="32" height="32">Connectix</a>
-      <p class="blurb">A telecom bot for VoIP providers, ITSPs and carriers. It runs on your servers, next to your switch, and works alongside your team.</p>
-    </div>
-    <div>
-      <h3>Product</h3>
-      <ul>
-        <li><a href="product.html">What it does</a></li>
-        <li><a href="https://github.com/connectix-io/releases">Download for Windows</a></li>
-        <li><a href="https://github.com/connectix-io/releases">Releases</a></li>
-      </ul>
+      <a class="brand" href="index.html" aria-label="Connectix home">
+        <!-- assets/images/connectix-logo.svg, inlined -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 61" width="190" height="61" role="img" aria-label="Connectix">
+          <defs><clipPath id="cx-clip-f"><circle cx="60" cy="60" r="54"/></clipPath></defs>
+          <g transform="translate(0.5 0.5) scale(0.5)">
+            <g clip-path="url(#cx-clip-f)"><rect x="0" y="0" width="60" height="120" fill="#BFE4E6"/><rect x="60" y="0" width="60" height="120" fill="#8FCDD0"/></g>
+            <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><path d="M60 28 L88 44 L60 60 L32 44 Z" fill="#6B7280"/><path d="M32 44 L60 60 L60 94 L32 78 Z"/><path d="M88 44 L60 60 L60 94 L88 78 Z"/></g>
+          </g>
+          <text class="word" x="68" y="39" font-family="Rubik, 'Open Sans', Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="0.3" fill="#ffffff">Connectix</text>
+        </svg>
+      </a>
+      <p class="blurb">Connect AI agents to phone numbers and SIP carriers. Run the voice infrastructure in your cloud, at your sites or with us.</p>
     </div>
     <div>
       <h3>Company</h3>
       <ul>
+        <li><a href="index.html#who">Who we serve</a></li>
+        <li><a href="index.html#platform">How we work</a></li>
+        <li><a href="product.html">Product</a></li>
         <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Get In Touch</h3>
+      <address>
+        1 Shenkar St.<br>
+        Herzliyya<br>
+        Israel
+      </address>
+      <ul>
         <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Downloads</h3>
+      <ul>
+        <li><a href="https://github.com/connectix-io/releases">Download for Windows</a></li>
+        <li><a href="https://github.com/connectix-io/releases">Releases</a></li>
       </ul>
     </div>
   </div>
   <div class="bottom">
-    <div class="container">&copy; 2026 Connectix. Developed in Israel.</div>
+    <div class="container">&copy; 2026 Connectix &mdash; dedicated to communicating better</div>
   </div>
 </footer>
 

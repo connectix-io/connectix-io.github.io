@@ -1,33 +1,41 @@
 # connectix-io.github.io
 
-The Connectix marketing site: plain HTML and CSS, no build step. Meant for
-GitHub Pages under the `connectix-io` organisation.
+The Connectix site: plain HTML and CSS, no build step. Served by GitHub
+Pages from the `main` branch, root folder.
+
+The design follows voipappz.com (header, hero, section rhythm, cards, footer),
+written as one stylesheet without Bootstrap or jQuery. The copy of the front
+page, the about page and the contact promo is voipappz.com's (branch `rotem`
+of va-voipappz.com) with the product named Connectix; the product page is
+Connectix's own.
 
 ## Files
 
 | Path | What |
 |---|---|
-| `index.html` | What Connectix is, the three jobs, how it works, where it runs |
-| `product.html` | The softphone, the bot on calls, events and screen pops, the chat, reports |
-| `about.html` | Who makes it, what we hold to, what we do not claim |
-| `contact.html` | The email address and the downloads |
+| `index.html` | Hero, platform differentiators, who uses it, references, platform features, pricing, FAQs, customers, get in touch |
+| `product.html` | The three jobs, the softphone, the bot on calls, events and screen pops, the chat, reports, under the hood |
+| `about.html` | Who are we |
+| `contact.html` | The email address, the office, the downloads |
 | `assets/css/site.css` | The one stylesheet |
-| `assets/js/site.js` | The mobile navigation toggle; nothing else needs JavaScript |
+| `assets/js/site.js` | The mobile navigation toggle; nothing else needs JavaScript (the FAQ uses `<details>`) |
 | `assets/images/connectix-mark.svg` | The logo mark (copied from the app) |
-| `assets/images/logos/` | The logo band on the front page |
+| `assets/images/connectix-logo.svg`, `connectix-logo-white.svg` | The mark plus the word "Connectix" in Rubik; the word is SVG text, not paths. The pages inline this markup so the web font applies |
+| `assets/images/logos/` | The customer logos, as on voipappz.com |
 | `favicon.svg`, `favicon.ico`, `apple-touch-icon.png` | The mark as icons; the raster ones come from `scripts/make-favicon.py` |
 | `robots.txt`, `.nojekyll` | Crawlers allowed; Pages serves the files as they are |
 
 The header and the footer are the same block of HTML in each page. Change
 them in all four. All copy is in the HTML, none is generated.
 
+Sections marked with an HTML comment "carried over on 2026-10-25, owner to
+confirm" (the references and the pricing on `index.html`) are voipappz.com's
+and await the owner's confirmation.
+
 ## Publishing
 
-1. Create the repository `connectix-io/connectix-io.github.io` and push this
-   tree to its `main` branch.
-2. In the repository's Settings, Pages: source **Deploy from a branch**,
-   branch `main`, folder `/ (root)`.
-3. The site is served at `https://connectix-io.github.io/` a minute later.
+Pages is set to **Deploy from a branch**, `main`, `/ (root)`. A push to
+`main` publishes within about a minute at `https://connectix-io.github.io/`.
 
 ### A custom domain
 
@@ -38,10 +46,10 @@ them in all four. All copy is in the HTML, none is generated.
 
 No `CNAME` file is in the tree yet; see the comment in this file's source.
 
-## Before publishing
+## Before publishing a change
 
-- Replace `CONTACT_EMAIL` in `contact.html` (one line, the `mailto:` link and
-  its text) with the real address.
+- `CONTACT_EMAIL` in `contact.html` (one line, the `mailto:` link and its
+  text) is a placeholder until the real address is set.
 - Run `scripts/check-links.sh`: it tests that every local `href` and `src`
   resolves to a file.
 - To regenerate the raster icons from the mark's geometry:
