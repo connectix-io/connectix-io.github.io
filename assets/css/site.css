@@ -491,3 +491,4 @@ table { border-collapse: collapse; }
 .hero .brand-word { color: var(--light-blue); }
 .cta .contact-info a { color: var(--light-blue); }
 .btn-secondary { background: var(--navy); }
+.hero .tagline { color: var(--light-blue); font-size: 19px; font-weight: 500; margin: 0 0 14px; }
