@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connectix: communication tool for the agentic workspace</title>
-  <meta name="description" content="Connectix is a phone for the agentic workspace, built on Elixir and the BEAM: calls, the bots' chat and the logs in one app, with a person approving every change.">
+  <meta name="description" content="Connectix is a communication tool for the agentic workspace: a phone built on Elixir and the BEAM that brings business calls, bot conversations and operational information into one application.">
   <meta name="author" content="Connectix">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -46,7 +46,7 @@
       <span class="brand-word">Connectix</span>
       <h1>Communication tool for the agentic workspace</h1>
       <p class="tagline">We are dedicated to better communication.</p>
-      <p class="lead">Connectix is a phone, built on Elixir and the BEAM. Calls, the bots' chat and the logs in one app, and bots that work on your switch, your calls and your customers' accounts and ask a person before they change anything.</p>
+      <p class="lead">Connectix is a phone, built on Elixir and the BEAM. Business calls, bot conversations and operational information in one application, with bots that stop and ask a person before a gated action.</p>
       <div class="actions center">
         <a href="contact.html" class="btn btn-cta btn-lg">Talk to us</a>
         <a href="https://github.com/connectix-io/releases/releases/download/v0.1.17/Connectix_0.1.17_x64-setup.exe" class="btn btn-ghost btn-lg" download>Download for Windows</a>
@@ -57,19 +57,19 @@
   <section id="framework" class="section">
     <div class="container">
       <h2 class="title">A phone with bots inside</h2>
-      <p class="intro">Connectix is one Elixir application on the BEAM, the runtime Ericsson built for telephone switches. Its bots run on Sagents: you define one, and Connectix gives it telecom tools, a phone line, memory and rules, on your own hardware.</p>
+      <p class="intro">Connectix is one Elixir application on the BEAM, the runtime Ericsson built for telephone switches. Its bots run on Sagents: you define one, and Connectix gives it telecom tools, a voice path, memory and rules, on your own hardware.</p>
       <div class="grid grid-3">
         <div class="item">
           <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div>
           <h3 class="upper">Bots are versioned</h3>
           <hr>
-          <p>A bot is a draft until you publish it. A published version is frozen, and each conversation stays on the version it started with, so you can change a bot without changing what a running call does.</p>
+          <p>A bot is a draft until you publish it, and publishing runs a preflight check. A published version is frozen, two versions can be compared as a diff, and each conversation stays on the version it started with.</p>
         </div>
         <div class="item">
           <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 4 12 6v4l-3.5 2L5 10V6l3.5-2zM15.5 10 19 12v4l-3.5 2L12 16v-4l3.5-2zM8.5 12 12 14v4l-3.5 2L5 18v-4l3.5-2z"/></svg></div>
           <h3 class="upper">Skills are code</h3>
           <hr>
-          <p>A bot picks its skills from a catalog: event store queries, call reports, customer lookup in the CRM, hand-off to a person, memory files, a task list, web lookup. Each tool declares its risk and whether it needs approval.</p>
+          <p>A bot picks its skills from a catalog: event store queries, call reports, customer lookup in Fireberry, hand-off to a person, memory files, a task list, web lookup. Each tool declares its risk and whether it needs approval.</p>
         </div>
         <div class="item">
           <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 3 8 7 9.5 4-1.5 7-5.1 7-9.5V6l-7-3z"/><path d="m9 12 2 2 4-4"/></svg></div>
@@ -84,12 +84,12 @@
   <section id="loop" class="section section-soft">
     <div class="container">
       <h2 class="title">A person in the loop</h2>
-      <p class="intro">The bot does the reading. A person decides on the changes.</p>
+      <p class="intro">The bot does the reading. A person approves the gated actions.</p>
       <div class="grid grid-4">
         <div class="flow-card"><div class="flow-label">Approve</div><h4>Actions wait for a yes</h4><p>When the bot wants to run a gated tool, the conversation stops and the request shows as a card: approve, reject, or approve always. Several requests come in one batch, in the bot's order.</p></div>
-        <div class="flow-card"><div class="flow-label">Answer</div><h4>The bot asks back</h4><p>When a fact is missing, the bot asks a question with choices instead of guessing, and carries on with the answer.</p></div>
-        <div class="flow-card"><div class="flow-label">Take over</div><h4>A person can take the conversation</h4><p>One button hands the conversation to a person; the bot stands down until it is given back.</p></div>
-        <div class="flow-card"><div class="flow-label">Hand off</div><h4>The bot passes it on</h4><p>A bot can hand a customer to the support team with a ticket summary, and say when the team will be back if it is after hours.</p></div>
+        <div class="flow-card"><div class="flow-label">Answer</div><h4>The bot asks back</h4><p>The bot can ask the person a question with choices, and carries on with the answer.</p></div>
+        <div class="flow-card"><div class="flow-label">Take over</div><h4>A person can take the conversation</h4><p>One button hands the conversation to a person; the bot takes no further turns until it is given back. A reply already being written is not cancelled.</p></div>
+        <div class="flow-card"><div class="flow-label">Hand off</div><h4>The bot passes it on</h4><p>A bot can hand a conversation to a person: it posts a summary of what was said and found, and stands down.</p></div>
       </div>
     </div>
   </section>
@@ -101,17 +101,17 @@
         <div class="item">
           <h3 class="upper">Tier-1 support</h3>
           <hr>
-          <p>A subscriber calls. The bot answers through mod_earshot, finds the account by its line in the CRM, checks the switch, and fixes what it safely can. The rest goes to a person with a summary.</p>
+          <p>A subscriber calls. The bot answers through mod_earshot and looks up the account by its business line in Fireberry: the line, the PBX domain, the trunks. What it cannot answer goes to a person with a summary.</p>
         </div>
         <div class="item">
-          <h3 class="upper">NOC watch</h3>
+          <h3 class="upper">NOC questions</h3>
           <hr>
-          <p>The bot reads the switch's events: registrations, failed calls, hang-up causes, agents. Ask it what happened in plain words and it answers from the event store, with a chart when one helps.</p>
+          <p>The switch's events are stored: registrations, calls, hang-up causes, agents. Ask the bot what happened and it answers from the event store with reports, or free SQL when the operator turns it on. A switch that goes silent raises an alarm.</p>
         </div>
         <div class="item">
           <h3 class="upper">Lead and supervisor</h3>
           <hr>
-          <p>How many calls today, who answered, who missed, which agent is which extension: fixed reports with bound parameters, so the numbers are the same every time you ask.</p>
+          <p>Calls, agents and queues, talk time, hourly and daily breakdowns, with charts in the chat. The report queries are fixed and written by us; the model fills in the parameters, not the SQL.</p>
         </div>
       </div>
     </div>
@@ -120,17 +120,17 @@
   <section id="app" class="section section-soft">
     <div class="container">
       <h2 class="title">The phone app</h2>
-      <p class="intro">One page for the person beside the bot: a softphone and the bot's chat. It runs in the Windows desktop app or in a browser.</p>
+      <p class="intro">One page for the person beside the bot: a softphone and the bot's chat. It runs in the Windows desktop app, in the Connectix Client for Windows connected to a Connectix server, or in a browser.</p>
       <div class="grid grid-3">
         <div class="item">
           <h3 class="upper">Phone</h3>
           <hr>
-          <p>Registers to your PBX over SIP. Calls in and out, hold, a second line with swap, call waiting, DTMF, blind transfer. When the line is down, it says why and what to check.</p>
+          <p>Registers to your PBX over SIP. Calls in and out, hold, a second line with swap, call waiting, DTMF, blind transfer, recent calls with redial. When the line is down, it says why and what to check.</p>
         </div>
         <div class="item">
           <h3 class="upper">Chat</h3>
           <hr>
-          <p>Talk to the bots, watch the reply stream in, approve or reject their actions, answer their questions, take a conversation over. Conversations, tasks and the bot's files in a side rail.</p>
+          <p>Talk to the bots, watch the reply stream in, approve or reject their actions, answer their questions, take a conversation over. Conversations, tasks and the bot's files in a side rail. The same bots answer WhatsApp Business, and a person can take a thread over and reply.</p>
         </div>
         <div class="item">
           <h3 class="upper">Logs</h3>
@@ -146,11 +146,50 @@
       <h2 class="title">On your network</h2>
       <div class="grid grid-3">
         <div class="flow-card"><div class="flow-label">Events</div><h4>FreeSWITCH Event Socket</h4><p>Read directly, or through a small node agent beside each switch. One pipeline with bounded buffers, stored in DuckDB with retention.</p></div>
-        <div class="flow-card"><div class="flow-label">Voice</div><h4>mod_earshot</h4><p>An answered call's audio comes to the bot over a WebSocket and its answer goes back. The caller can interrupt. Call control is whitelisted on the switch and approved in Connectix.</p></div>
-        <div class="flow-card"><div class="flow-label">Line</div><h4>Its own SIP account</h4><p>Connectix registers like any extension, so a bot or a person can place and take calls on it.</p></div>
+        <div class="flow-card"><div class="flow-label">Voice</div><h4>mod_earshot</h4><p>An answered call's audio comes to the bot over a WebSocket and its answer goes back. The caller can interrupt, and the transcript is kept with the conversation. Transfer and hang-up from the bot are planned.</p></div>
+        <div class="flow-card"><div class="flow-label">Line</div><h4>Its own SIP account</h4><p>Connectix registers like any extension: the phone places and takes calls on it, and an API call can have a bot place an outbound call.</p></div>
       </div>
       <hr class="wide-hr">
-      <p class="center">Runs as one container next to your switch, or as the Windows desktop app on an operator's PC. Call records, events and conversations stay on your hardware. You choose the speech and language model providers.</p>
+      <p class="center">Start on one PC with the Windows desktop app. Later, move the same Connectix to a server next to your switch, where operators use the Connectix Client for Windows or a browser. On a server it runs today as one container (Docker, deployable with Kamal); a single self-contained Linux binary that runs as a background service, with no Docker, is planned. The databases (call records, events, conversations) stay on your hardware. Speech goes to Deepgram (speech to text) and Cartesia (text to speech), and conversation text goes to the language-model provider you configure: the embedded model gateway or an external one.</p>
+    </div>
+  </section>
+
+  <section id="otp" class="section section-soft">
+    <div class="container">
+      <h2 class="title">Built on Elixir and Erlang/OTP</h2>
+      <p class="intro">A phone has to keep working while one call goes wrong. That is what Erlang/OTP was made for. The desktop app is one self-contained program: a single Elixir release with its runtime inside.</p>
+      <div class="grid grid-3">
+        <div class="item">
+          <h3 class="upper">The switch runtime</h3>
+          <hr>
+          <p>The BEAM is the runtime Ericsson built for telephone switches. Connectix runs on it.</p>
+        </div>
+        <div class="item">
+          <h3 class="upper">A process per call</h3>
+          <hr>
+          <p>Every call, every bot conversation and every connection to the switch is its own lightweight, supervised process. When one fails, that part restarts, not the program.</p>
+        </div>
+        <div class="item">
+          <h3 class="upper">Side by side</h3>
+          <hr>
+          <p>Calls and conversations run side by side without blocking each other: the scheduler is preemptive and each process has its own memory.</p>
+        </div>
+        <div class="item">
+          <h3 class="upper">Bounded buffers</h3>
+          <hr>
+          <p>Under overload a queue drops the oldest event, counts the drop and logs once, instead of running out of memory.</p>
+        </div>
+        <div class="item">
+          <h3 class="upper">Watched connections</h3>
+          <hr>
+          <p>Keepalives, a deadman on a feed that goes silent, and reconnects with backoff from 1 s to 30 s.</p>
+        </div>
+        <div class="item">
+          <h3 class="upper">A live console</h3>
+          <hr>
+          <p>The tray's Console&hellip; attaches to the running Connectix and looks inside without stopping it, over Erlang distribution, on the same PC only.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -199,7 +238,7 @@
     <div>
       <a class="brand" href="index.html" aria-label="Connectix home"><img src="assets/images/connectix-mark.svg" alt="" width="38" height="38"><span class="wm">connectix<span class="tld">.io</span></span>
       </a>
-      <p class="blurb">Communication tool for the agentic workspace. A phone built on Elixir and the BEAM, with bots that ask a person before they act.</p>
+      <p class="blurb">Communication tool for the agentic workspace. A phone built on Elixir and the BEAM, with bots that stop for a person's approval on gated actions.</p>
     </div>
     <div>
       <h3>Company</h3>
