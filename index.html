@@ -3,16 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connectix: communication tool for the agentic workspace</title>
-  <meta name="description" content="Connectix is a communication tool for the agentic workspace: a phone built on Elixir and the BEAM that brings business calls, bot conversations and operational information into one application.">
+  <title>Connectix: a softphone for call-center agents</title>
+  <meta name="description" content="Connectix is a desktop softphone for call-center agents. It calls through your existing PBX and adds call transcripts and a chat with a bot.">
   <meta name="author" content="Connectix">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
+  <style>
+    .downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 32px; }
+    .platform { display: flex; flex-direction: column; align-items: flex-start; border: 1px solid #e3e6ea; border-radius: 10px; padding: 22px; text-align: left; background: #fff; }
+    .platform > .btn, .platform > .soon { margin-top: auto; }
+    .platform h3 { margin: 0 0 4px; font-size: 18px; }
+    .platform .what { margin: 0 0 16px; color: #667085; font-size: 14px; }
+    .platform .soon { display: inline-block; padding: 8px 14px; border-radius: 6px; background: #f2f4f7; color: #667085; font-size: 14px; font-weight: 500; }
+    .small-print { margin-top: 24px; color: #667085; font-size: 14px; text-align: center; }
+    .small-print a { color: inherit; text-decoration: underline; }
+  </style>
 </head>
 <body class="home-page">
 
@@ -25,14 +35,9 @@
     </button>
     <nav class="nav" id="nav" aria-label="Main">
       <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="index.html#framework">Framework</a></li>
-        <li><a href="index.html#loop">Person in the loop</a></li>
-        <li><a href="index.html#jobs">Jobs</a></li>
-        <li><a href="index.html#app">Phone app</a></li>
-        <li><a href="product.html">Product</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#product">Product</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -40,194 +45,96 @@
 
 <main>
 
-  <!-- Hero: the owner's slogan -->
-  <section id="home-promo" class="hero">
+  <section class="hero">
     <div class="container">
-      <span class="brand-word">Connectix</span>
-      <h1>Communication tool for the agentic workspace</h1>
-      <p class="tagline">We are dedicated to better communication.</p>
-      <p class="lead">Connectix is a phone, built on Elixir and the BEAM. Business calls, bot conversations and operational information in one application, with bots that stop and ask a person before a gated action.</p>
+      <h1>A softphone for call-center agents</h1>
+      <p class="lead">Connectix calls through the PBX you already have. It keeps your call history, can transcribe and summarise calls, and has a chat with a bot that answers questions about your calls. In English and Hebrew.</p>
       <div class="actions center">
-        <a href="contact.html" class="btn btn-cta btn-lg">Talk to us</a>
-        <a href="https://github.com/connectix-io/releases/releases/latest/download/Connectix-Setup-x64.exe" class="btn btn-ghost btn-lg" download>Download for Windows</a>
+        <a href="#download" class="btn btn-cta btn-lg">Download</a>
+        <a href="#contact" class="btn btn-ghost btn-lg">Contact us</a>
       </div>
     </div>
   </section>
 
-  <section id="framework" class="section">
+  <section id="product" class="section">
     <div class="container">
-      <h2 class="title">A phone with bots inside</h2>
-      <p class="intro">Connectix is one Elixir application on the BEAM, the runtime Ericsson built for telephone switches. Its bots run on Sagents: you define one, and Connectix gives it telecom tools, a voice path, memory and rules, on your own hardware.</p>
+      <h2 class="title">What it does</h2>
       <div class="grid grid-3">
         <div class="item">
-          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div>
-          <h3 class="upper">Bots are versioned</h3>
+          <h3>Calls</h3>
           <hr>
-          <p>A bot is a draft until you publish it, and publishing runs a preflight check. A published version is frozen, two versions can be compared as a diff, and each conversation stays on the version it started with.</p>
+          <p>Dial, answer, hold, transfer and take a second call, on your own SIP account. It shows when the line is ready and says plainly why when it is not.</p>
         </div>
         <div class="item">
-          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 4 12 6v4l-3.5 2L5 10V6l3.5-2zM15.5 10 19 12v4l-3.5 2L12 16v-4l3.5-2zM8.5 12 12 14v4l-3.5 2L5 18v-4l3.5-2z"/></svg></div>
-          <h3 class="upper">Skills are code</h3>
+          <h3>Transcripts</h3>
           <hr>
-          <p>A bot picks its skills from a catalog: event store queries, call reports, customer lookup in Fireberry, hand-off to a person, memory files, a task list, web lookup. Each tool declares its risk and whether it needs approval.</p>
+          <p>When switched on, each call becomes text with a short summary. A speech model on your own computer can do it, so the audio need not leave your network. Only the text is kept.</p>
         </div>
         <div class="item">
-          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 3 8 7 9.5 4-1.5 7-5.1 7-9.5V6l-7-3z"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3 class="upper">Rules are not prompts</h3>
+          <h3>Chat with a bot</h3>
           <hr>
-          <p>Business hours, session time-outs, which tools stop for approval: these are checks in code, evaluated before the tool runs. The bot cannot talk its way past them.</p>
+          <p>Ask about today's calls, missed calls or a customer, and get the answer with a chart. A person can take over the conversation at any time.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="loop" class="section section-soft">
+  <section id="download" class="section section-soft">
     <div class="container">
-      <h2 class="title">A person in the loop</h2>
-      <p class="intro">The bot does the reading. A person approves the gated actions.</p>
-      <div class="grid grid-4">
-        <div class="flow-card"><div class="flow-label">Approve</div><h4>Actions wait for a yes</h4><p>When the bot wants to run a gated tool, the conversation stops and the request shows as a card: approve, reject, or approve always. Several requests come in one batch, in the bot's order.</p></div>
-        <div class="flow-card"><div class="flow-label">Answer</div><h4>The bot asks back</h4><p>The bot can ask the person a question with choices, and carries on with the answer.</p></div>
-        <div class="flow-card"><div class="flow-label">Take over</div><h4>A person can take the conversation</h4><p>One button hands the conversation to a person; the bot takes no further turns until it is given back. A reply already being written is not cancelled.</p></div>
-        <div class="flow-card"><div class="flow-label">Hand off</div><h4>The bot passes it on</h4><p>A bot can hand a conversation to a person: it posts a summary of what was said and found, and stands down.</p></div>
+      <h2 class="title">Download</h2>
+      <p class="intro">Version 0.1.22. Every version, with its checksums, is on <a href="https://github.com/connectix-io/releases/releases">GitHub Releases</a>.</p>
+      <div class="downloads">
+        <div class="platform">
+          <h3>Windows</h3>
+          <p class="what">Windows 10 and 11, 64-bit. The desktop phone.</p>
+          <a class="btn btn-cta" href="https://github.com/connectix-io/releases/releases/latest/download/Connectix-Setup-x64.exe" download>Download installer</a>
+        </div>
+        <div class="platform">
+          <h3>Linux</h3>
+          <p class="what">x86-64. Connectix for a server, one executable.</p>
+          <a class="btn btn-cta" href="https://github.com/connectix-io/releases/releases/latest/download/connectix-linux-x86_64" download>Download</a>
+        </div>
+        <div class="platform">
+          <h3>Chrome</h3>
+          <p class="what">The extension that opens the customer's record when a call arrives.</p>
+          <a class="btn btn-cta" href="https://github.com/connectix-io/releases/releases/latest/download/connectix-chrome-extension.zip" download>Download extension</a>
+        </div>
+        <div class="platform">
+          <h3>Android</h3>
+          <p class="what">The phone app for Android.</p>
+          <span class="soon">Planned</span>
+        </div>
+        <div class="platform">
+          <h3>iPhone</h3>
+          <p class="what">The phone app for iOS.</p>
+          <span class="soon">Planned</span>
+        </div>
+        <div class="platform">
+          <h3>macOS</h3>
+          <p class="what">The desktop phone for Mac.</p>
+          <span class="soon">Not yet</span>
+        </div>
       </div>
+      <p class="small-print">The Windows installer is not yet code-signed, so Windows shows an unknown-publisher warning the first time. Check a download against <a href="https://github.com/connectix-io/releases/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a>.</p>
     </div>
   </section>
 
-  <section id="jobs" class="section">
+  <section id="contact" class="section">
     <div class="container">
-      <h2 class="title">Jobs for a telecom team</h2>
-      <div class="grid grid-3">
+      <h2 class="title">Contact</h2>
+      <p class="intro">Tell us which PBX you use and how your agents work. We will reply.</p>
+      <div class="grid grid-2">
         <div class="item">
-          <h3 class="upper">Tier-1 support</h3>
+          <h3>Email</h3>
           <hr>
-          <p>A subscriber calls. The bot answers through mod_earshot and looks up the account by its business line in Fireberry: the line, the PBX domain, the trunks. What it cannot answer goes to a person with a summary.</p>
+          <p><a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></p>
         </div>
         <div class="item">
-          <h3 class="upper">NOC questions</h3>
+          <h3>Office</h3>
           <hr>
-          <p>The switch's events are stored: registrations, calls, hang-up causes, agents. Ask the bot what happened and it answers from the event store with reports, or free SQL when the operator turns it on. A switch that goes silent raises an alarm.</p>
-        </div>
-        <div class="item">
-          <h3 class="upper">Lead and supervisor</h3>
-          <hr>
-          <p>Calls, agents and queues, talk time, hourly and daily breakdowns, with charts in the chat. The report queries are fixed and written by us; the model fills in the parameters, not the SQL.</p>
+          <p>1 Shenkar St., Herzliyya, Israel</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="app" class="section section-soft">
-    <div class="container">
-      <h2 class="title">The phone app</h2>
-      <p class="intro">One page for the person beside the bot: a softphone and the bot's chat. It runs in the Windows desktop app, in the Connectix Client for Windows connected to a Connectix server, or in a browser.</p>
-      <div class="grid grid-3">
-        <div class="item">
-          <h3 class="upper">Phone</h3>
-          <hr>
-          <p>Registers to your PBX over SIP. Calls in and out, hold, a second line with swap, call waiting, DTMF, blind transfer, recent calls with redial. When the line is down, it says why and what to check.</p>
-        </div>
-        <div class="item">
-          <h3 class="upper">Chat</h3>
-          <hr>
-          <p>Talk to the bots, watch the reply stream in, approve or reject their actions, answer their questions, take a conversation over. Conversations, tasks and the bot's files in a side rail. The same bots answer WhatsApp Business, and a person can take a thread over and reply.</p>
-        </div>
-        <div class="item">
-          <h3 class="upper">Logs</h3>
-          <hr>
-          <p>The SIP trace and the system log on the same screen, so a refused registration or a failed call can be read where it happened.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="network" class="section">
-    <div class="container">
-      <h2 class="title">On your network</h2>
-      <div class="grid grid-3">
-        <div class="flow-card"><div class="flow-label">Events</div><h4>FreeSWITCH Event Socket</h4><p>Read directly, or through a small node agent beside each switch. One pipeline with bounded buffers, stored in DuckDB with retention.</p></div>
-        <div class="flow-card"><div class="flow-label">Voice</div><h4>mod_earshot</h4><p>An answered call's audio comes to the bot over a WebSocket and its answer goes back. The caller can interrupt, and the transcript is kept with the conversation. Transfer and hang-up from the bot are planned.</p></div>
-        <div class="flow-card"><div class="flow-label">Line</div><h4>Its own SIP account</h4><p>Connectix registers like any extension: the phone places and takes calls on it, and an API call can have a bot place an outbound call.</p></div>
-      </div>
-      <hr class="wide-hr">
-      <p class="center">Start on one PC with the Windows desktop app. Later, move the same Connectix to a server next to your switch, where operators use the Connectix Client for Windows or a browser. On a server it runs today as one container (Docker, deployable with Kamal); a single self-contained Linux binary that runs as a background service, with no Docker, is planned. The databases (call records, events, conversations) stay on your hardware. Speech goes to Deepgram (speech to text) and Cartesia (text to speech), and conversation text goes to the language-model provider you configure: the embedded model gateway or an external one.</p>
-    </div>
-  </section>
-
-  <section id="otp" class="section section-soft">
-    <div class="container">
-      <h2 class="title">Built on Elixir and Erlang/OTP</h2>
-      <p class="intro">A phone has to keep working while one call goes wrong. That is what Erlang/OTP was made for. The desktop app is one self-contained program: a single Elixir release with its runtime inside.</p>
-      <div class="grid grid-3">
-        <div class="item">
-          <h3 class="upper">The switch runtime</h3>
-          <hr>
-          <p>The BEAM is the runtime Ericsson built for telephone switches. Connectix runs on it.</p>
-        </div>
-        <div class="item">
-          <h3 class="upper">A process per call</h3>
-          <hr>
-          <p>Every call, every bot conversation and every connection to the switch is its own lightweight, supervised process. When one fails, that part restarts, not the program.</p>
-        </div>
-        <div class="item">
-          <h3 class="upper">Side by side</h3>
-          <hr>
-          <p>Calls and conversations run side by side without blocking each other: the scheduler is preemptive and each process has its own memory.</p>
-        </div>
-        <div class="item">
-          <h3 class="upper">Bounded buffers</h3>
-          <hr>
-          <p>Under overload a queue drops the oldest event, counts the drop and logs once, instead of running out of memory.</p>
-        </div>
-        <div class="item">
-          <h3 class="upper">Watched connections</h3>
-          <hr>
-          <p>Keepalives, a deadman on a feed that goes silent, and reconnects with backoff from 1 s to 30 s.</p>
-        </div>
-        <div class="item">
-          <h3 class="upper">A live console</h3>
-          <hr>
-          <p>The tray's Console&hellip; attaches to the running Connectix and looks inside without stopping it, over Erlang distribution, on the same PC only.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="logos" class="section logos">
-    <div class="container center">
-      <h2 class="title">Telecom companies we have worked with</h2>
-      <p class="intro">Telecom operators, service providers, enterprise engineering teams, call centers and software companies.</p>
-      <div class="row">
-        <img src="assets/images/logos/xphone.svg" alt="Xphone">
-        <img src="assets/images/logos/gilat-telecom-ghana.png" alt="Gilat Telecom Ghana">
-        <img src="assets/images/logos/bezeq-international.png" alt="Bezeq International">
-        <img src="assets/images/logos/partner.png" alt="Partner">
-        <img src="assets/images/logos/memo-global.png" alt="Memo Global">
-        <img src="assets/images/logos/vocalio.svg" alt="Vocalio">
-        <img src="assets/images/logos/bezecom.png" alt="Bezecom">
-        <img src="assets/images/logos/edp.png" alt="EDP">
-        <img src="assets/images/logos/nextcom.png" alt="Nextcom">
-        <img src="assets/images/logos/highcomm.png" alt="HighComm">
-        <img src="assets/images/logos/kavkom.png" alt="Kavkom">
-        <img src="assets/images/logos/yallo.png" alt="Yallo">
-        <img src="assets/images/logos/meucci.png" alt="Meucci">
-        <img src="assets/images/logos/robohold.png" alt="Robohold">
-        <img src="assets/images/logos/nimbus.png" alt="Nimbus">
-        <img src="assets/images/logos/mtn-ghana.svg" alt="MTN Ghana">
-        <img src="assets/images/logos/elbit-systems.png" alt="Elbit Systems">
-        <img src="assets/images/logos/wecom.svg" alt="wecom">
-        <span class="wordmark long" aria-label="TechMer and MER Group">TechMer<br>MER Group</span>
-        <span class="wordmark" aria-label="HOT Telecom">HOT Telecom</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Get in touch: voipappz.com #cta-section, without the phone, the help desk links and the form -->
-  <section id="contact" class="cta">
-    <div class="container">
-      <h2 class="title">Get in touch</h2>
-      <p>Tell us which switch you run and which job you have in mind. We answer with what a pilot would take.</p>
-      <a href="contact.html" class="btn btn-cta btn-lg">Talk to us</a>
     </div>
   </section>
 
@@ -238,38 +145,16 @@
     <div>
       <a class="brand" href="index.html" aria-label="Connectix home"><img src="assets/images/connectix-mark.svg" alt="" width="38" height="38"><span class="wm">connectix<span class="tld">.io</span></span>
       </a>
-      <p class="blurb">Communication tool for the agentic workspace. A phone built on Elixir and the BEAM, with bots that stop for a person's approval on gated actions.</p>
+      <p class="blurb">A softphone for call-center agents.</p>
     </div>
     <div>
-      <h3>Company</h3>
+      <h3>Site</h3>
       <ul>
-        <li><a href="index.html#framework">Framework</a></li>
-        <li><a href="index.html#loop">Person in the loop</a></li>
-        <li><a href="product.html">Product</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="#product">Product</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
-    <div>
-      <h3>Get In Touch</h3>
-      <address>
-        1 Shenkar St.<br>
-        Herzliyya<br>
-        Israel
-      </address>
-      <ul>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3>Downloads</h3>
-      <ul>
-        <li><a href="https://github.com/connectix-io/releases/releases/latest/download/Connectix-Setup-x64.exe" download>Download for Windows</a></li>
-        <li><a href="https://github.com/connectix-io/releases">Releases</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="bottom">
-    <div class="container">&copy; 2026 Connectix. We are dedicated to better communication.</div>
   </div>
 </footer>
 

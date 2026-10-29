@@ -13,10 +13,8 @@ Connectix's own.
 
 | Path | What |
 |---|---|
-| `index.html` | Hero, platform differentiators, who uses it, references, platform features, pricing, FAQs, customers, get in touch |
-| `product.html` | The three jobs, the softphone, the bot on calls, events and screen pops, the chat, reports, under the hood |
-| `about.html` | Who are we |
-| `contact.html` | The email address, the office, the downloads |
+| `index.html` | The one page: what Connectix does, downloads for every platform (links to the latest GitHub Release), contact |
+| `product.html`, `about.html`, `contact.html` | Redirects to the matching section of `index.html`, so old links still work |
 | `assets/css/site.css` | The one stylesheet |
 | `assets/js/site.js` | The mobile navigation toggle; nothing else needs JavaScript (the FAQ uses `<details>`) |
 | `assets/images/connectix-mark.svg` | The logo mark (copied from the app) |
@@ -27,10 +25,6 @@ Connectix's own.
 
 The header and the footer are the same block of HTML in each page. Change
 them in all four. All copy is in the HTML, none is generated.
-
-Sections marked with an HTML comment "carried over on 2026-10-25, owner to
-confirm" (the references and the pricing on `index.html`) are voipappz.com's
-and await the owner's confirmation.
 
 ## Publishing
 
